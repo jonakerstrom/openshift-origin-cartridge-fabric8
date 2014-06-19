@@ -5,7 +5,7 @@ Description: "Apache Servicemix is an powerful open source ESB."
 Version: '5.0.1'
 License: Apache
 License-Url: http://www.apache.org/licenses/LICENSE-2.0.html
-Vendor: Apache Software Foundation
+Vendor: Apache
 Cartridge-Version: 0.0.1
 Cartridge-Vendor: Jon Åkerström
 Source-Url: https://github.com/jonakerstrom/openshift-origin-cartridge-servicemix.git

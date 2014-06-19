@@ -5,10 +5,10 @@ case "$1" in
     version="$2"
 esac
 
-cp -r ${OPENSHIFT_ACTIVEMQ_DIR}/versions/${version}/template/* ${OPENSHIFT_ACTIVEMQ_DIR}/template
-cp -r ${OPENSHIFT_ACTIVEMQ_DIR}/versions/${version}/template/.openshift ${OPENSHIFT_ACTIVEMQ_DIR}/template
-mkdir -p ${OPENSHIFT_ACTIVEMQ_DIR}/template/.openshift/config
-cp ${OPENSHIFT_ACTIVEMQ_DIR}/apache-servicemix/conf/* ${OPENSHIFT_ACTIVEMQ_DIR}/template/.openshift/config
+cp -r ${OPENSHIFT_SERVICEMIX_DIR}/versions/${version}/template/* ${OPENSHIFT_SERVICEMIX_DIR}/template
+cp -r ${OPENSHIFT_SERVICEMIX_DIR}/versions/${version}/template/.openshift ${OPENSHIFT_SERVICEMIX_DIR}/template
+mkdir -p ${OPENSHIFT_SERVICEMIX_DIR}/template/.openshift/config
+cp ${OPENSHIFT_SERVICEMIX_DIR}/apache-servicemix/conf/* ${OPENSHIFT_SERVICEMIX_DIR}/template/.openshift/config
 
-echo "$version" > "$OPENSHIFT_ACTIVEMQ_DIR/env/OPENSHIFT_ACTIVEMQ_VERSION"
+echo "$version" > "$OPENSHIFT_SERVICEMIX_DIR/env/OPENSHIFT_SERVICEMIX_VERSION"
 

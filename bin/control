@@ -43,20 +43,20 @@ function copy_conf() {
 	  do
 	    target=$(basename $f)
 	    # Remove any target that is being overwritten
-	    if [ -e "${OPENSHIFT_SERVICEMIX_DIR}/apache-servicemix/conf/$target" ]
+	    if [ -e "${OPENSHIFT_SERVICEMIX_DIR}/apache-servicemix/etc/$target" ]
 	    then
 	       echo "Removing existing $target"
-	       rm -rf "${OPENSHIFT_SERVICEMIX_DIR}/apache-servicemix/conf/$target"
-	       cp ${OPENSHIFT_REPO_DIR}.openshift/config/$target ${OPENSHIFT_SERVICEMIX_DIR}/apache-servicemix/conf
+	       rm -rf "${OPENSHIFT_SERVICEMIX_DIR}/apache-servicemix/etc/$target"
+	       cp ${OPENSHIFT_REPO_DIR}.openshift/config/$target ${OPENSHIFT_SERVICEMIX_DIR}/apache-servicemix/etc
 	    fi
 	  done
 	else
-		cp ${OPENSHIFT_SERVICEMIX_DIR}/versions/${version}/apache-servicemix/conf/* ${OPENSHIFT_SERVICEMIX_DIR}/apache-servicemix/conf
+		cp ${OPENSHIFT_SERVICEMIX_DIR}/versions/${version}/apache-servicemix/etc/* ${OPENSHIFT_SERVICEMIX_DIR}/apache-servicemix/etc
 	fi
 }
 
 function replace_envs() {
-	for f in ${OPENSHIFT_SERVICEMIX_DIR}/apache-servicemix/conf/*.xml
+	for f in ${OPENSHIFT_SERVICEMIX_DIR}/apache-servicemix/etc/*
 	do
 		sed -i -e "s/\${env.OPENSHIFT_SERVICEMIX_IP}/$OPENSHIFT_SERVICEMIX_IP/g" \
 			$f

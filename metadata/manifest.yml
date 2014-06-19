@@ -10,6 +10,7 @@ Cartridge-Version: 0.0.1
 Cartridge-Vendor: jon
 Source-Url: https://github.com/jonakerstrom/openshift-origin-cartridge-servicemix.git
 Categories:
+  - web_framework
   - service
   - database
   - embedded

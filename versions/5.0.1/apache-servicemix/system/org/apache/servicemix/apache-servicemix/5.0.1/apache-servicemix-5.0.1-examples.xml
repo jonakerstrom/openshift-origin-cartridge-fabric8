@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one or more
+    contributor license agreements.  See the NOTICE file distributed with
+    this work for additional information regarding copyright ownership.
+    The ASF licenses this file to You under the Apache License, Version 2.0
+    (the "License"); you may not use this file except in compliance with
+    the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<features name="servicemix-examples-5.0.1">
+
+    <!--
+      -
+      -  Examples
+      -
+    -->
+    <feature name="examples-activemq-camel-blueprint" version="5.0.1" resolver="(obr)">
+        <feature version="5.9.0">activemq-broker-noweb</feature>
+        <feature version="2.12.3">camel-jms</feature>
+        <feature version="2.12.3">camel-blueprint</feature>
+        <bundle>mvn:org.apache.servicemix.examples/activemq-camel-blueprint/5.0.1</bundle>
+    </feature>
+    <feature name="examples-cxf-osgi" version="5.0.1" resolver="(obr)">
+        <feature version="2.7.10">cxf</feature>
+        <bundle dependency="true">mvn:commons-io/commons-io/2.4</bundle>
+        <bundle dependency="true">mvn:org.springframework/org.springframework.beans/3.2.4.RELEASE</bundle>
+        <bundle>mvn:org.apache.servicemix.examples/cxf-osgi/5.0.1</bundle>
+    </feature>
+    <feature name="examples-cxf-jaxrs" version="5.0.1" resolver="(obr)">
+        <feature version="2.7.10">cxf</feature>
+        <bundle dependency="true">mvn:org.springframework/org.springframework.beans/3.2.4.RELEASE</bundle>
+	<bundle dependency="true">mvn:commons-codec/commons-codec/1.9</bundle>
+        <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-httpclient/3.1_7</bundle>
+        <bundle>mvn:org.apache.servicemix.examples/cxf-jaxrs/5.0.1</bundle>
+    </feature>
+    <feature name="examples-cxf-jaxrs-blueprint" version="5.0.1" resolver="(obr)">
+        <feature version="2.7.10">cxf</feature>
+        <feature version="5.0.1">swagger</feature>
+        <bundle dependency="true">mvn:org.springframework/org.springframework.beans/3.2.4.RELEASE</bundle>
+	<bundle dependency="true">mvn:commons-codec/commons-codec/1.9</bundle>
+        <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-httpclient/3.1_7</bundle>
+        <bundle>mvn:org.apache.servicemix.examples/cxf-jaxrs-blueprint/5.0.1</bundle>
+    </feature>
+    <feature name="examples-cxf-jaxws-blueprint" version="5.0.1" resolver="(obr)">
+        <feature version="2.7.10">cxf</feature>
+        <bundle dependency="true">mvn:org.springframework/org.springframework.beans/3.2.4.RELEASE</bundle>
+	<bundle dependency="true">mvn:commons-codec/commons-codec/1.9</bundle>
+        <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-httpclient/3.1_7</bundle>
+        <bundle>mvn:org.apache.servicemix.examples/cxf-jaxws-blueprint/5.0.1</bundle>
+    </feature>
+    <feature name="examples-camel-sql-derby" version="5.0.1" resolver="(obr)">
+        <feature version="2.12.3">camel-sql</feature>
+        <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-dbcp/1.4_3</bundle>
+        <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.derby/10.9.1.0_1</bundle>
+        <bundle>mvn:org.apache.servicemix.examples/camel-sql-datasource-derby/5.0.1</bundle>
+        <bundle>mvn:org.apache.servicemix.examples/camel-sql-orders/5.0.1</bundle>
+    </feature>
+    <feature name="examples-camel-sql-pgsql" version="5.0.1" resolver="(obr)">
+        <feature version="2.12.3">camel-sql</feature>
+        <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-dbcp/1.4_3</bundle>
+        <bundle dependency="true">wrap:mvn:postgresql/postgresql/9.1-901.jdbc4</bundle>
+        <bundle>mvn:org.apache.servicemix.examples/camel-sql-datasource-pgsql/5.0.1</bundle>
+        <bundle>mvn:org.apache.servicemix.examples/camel-sql-orders/5.0.1</bundle>
+    </feature>
+    <feature name="examples-camel-sql-h2" version="5.0.1" resolver="(obr)">
+        <feature version="2.12.3">camel-sql</feature>
+        <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-dbcp/1.4_3</bundle>
+        <bundle dependency="true">mvn:org.osgi/org.osgi.compendium/4.3.1</bundle>
+        <bundle dependency="true">mvn:com.h2database/h2/1.3.170</bundle>
+        <bundle>mvn:org.apache.servicemix.examples/camel-sql-datasource-h2/5.0.1</bundle>
+        <bundle>mvn:org.apache.servicemix.examples/camel-sql-orders/5.0.1</bundle>
+    </feature>
+    <feature name="examples-camel-osgi" version="5.0.1" resolver="(obr)">
+        <feature version="2.12.3">camel</feature>
+        <bundle>mvn:org.apache.servicemix.examples/camel-osgi/5.0.1</bundle>
+    </feature>
+    <feature name="examples-camel-blueprint" version="5.0.1" resolver="(obr)">
+        <feature version="2.12.3">camel-blueprint</feature>
+        <bundle>mvn:org.apache.servicemix.examples/camel-blueprint/5.0.1</bundle>
+    </feature>
+    <feature name="examples-camel-drools" version="5.0.1" resolver="(obr)">
+        <feature version="2.12.3">camel-jms</feature>
+        <feature version="5.6.0.Final">drools</feature>
+        <bundle>mvn:org.apache.servicemix.examples/camel-drools/5.0.1</bundle>
+    </feature>
+    <feature name="examples-camel-drools-blueprint" version="5.0.1" resolver="(obr)">
+        <feature version="2.12.3">camel-jms</feature>
+        <feature version="5.6.0.Final">drools</feature>
+        <bundle>mvn:org.apache.servicemix.examples/camel-drools-blueprint/5.0.1</bundle>
+    </feature>
+    <feature name="examples-camel-cxf-rest" version="5.0.1" resolver="(obr)">
+        <bundle>mvn:org.apache.servicemix.examples/camel-cxf-rest-service/5.0.1</bundle>
+        <bundle>mvn:org.apache.servicemix.examples/camel-cxf-rest-route/5.0.1</bundle>
+    </feature>
+    <feature name="examples-cxf-ws-addressing" version="5.0.1" resolver="(obr)">
+        <feature version="2.7.10">cxf</feature>
+        <bundle dependency="true">mvn:org.springframework/org.springframework.beans/3.2.4.RELEASE</bundle>
+        <bundle dependency="true">mvn:commons-io/commons-io/2.4</bundle>
+        <bundle>mvn:org.apache.servicemix.examples/cxf-ws-addressing/5.0.1</bundle>
+    </feature>
+    <feature name="examples-cxf-ws-security-osgi" version="5.0.1" resolver="(obr)">
+        <feature version="2.7.10">cxf</feature>
+        <bundle dependency="true">mvn:org.springframework/org.springframework.beans/3.2.4.RELEASE</bundle>
+        <bundle>mvn:org.apache.servicemix.examples/cxf-ws-security-osgi/5.0.1</bundle>
+    </feature>
+    <feature name="examples-cxf-ws-security-blueprint" version="5.0.1" resolver="(obr)">
+        <feature version="2.7.10">cxf</feature>
+        <bundle>mvn:org.apache.servicemix.examples/cxf-ws-security-blueprint/5.0.1</bundle>
+    </feature>
+    <feature name="examples-cxf-ws-security-signature" version="5.0.1" resolver="(obr)">
+        <feature version="2.7.10">cxf</feature>
+        <bundle dependency="true">mvn:org.springframework/org.springframework.beans/3.2.4.RELEASE</bundle>
+        <bundle dependency="true">mvn:commons-io/commons-io/2.4</bundle>
+        <bundle>mvn:org.apache.servicemix.examples/cxf-ws-security-signature/5.0.1</bundle>
+    </feature>
+    <feature name="examples-cxf-ws-rm" version="5.0.1" resolver="(obr)">
+        <feature version="2.7.10">cxf</feature>
+        <bundle>mvn:org.apache.servicemix.examples/cxf-ws-rm/5.0.1</bundle>
+    </feature>
+    <feature name="examples-cxf-wsn-receive" version="5.0.1" resolver="(obr)">
+        <feature version="2.12.3">camel-jetty</feature>
+        <feature version="2.12.3">camel-jms</feature>
+        <feature version="2.12.3">camel-jaxb</feature>
+        <feature version="2.7.10">cxf-wsn</feature>
+        <bundle>mvn:org.apache.servicemix.examples/cxf-wsn-base/5.0.1</bundle>
+        <bundle>mvn:org.apache.servicemix.examples/cxf-wsn-receive/5.0.1</bundle>
+    </feature>
+    <feature name="examples-cxf-wsn-notifier" version="5.0.1" resolver="(obr)">
+        <feature version="5.0.1">examples-cxf-wsn-receive</feature>
+        <bundle>mvn:org.apache.servicemix.examples/cxf-wsn-notifier/5.0.1</bundle>
+    </feature>
+
+    <feature name="examples-activiti-camel" version="5.0.1" resolver="(obr)">
+	      <feature version="2.12.3">camel-core</feature>
+        <feature version="5.15.1">activiti</feature>
+        <bundle>mvn:org.apache.servicemix.examples/activiti-camel/5.0.1</bundle>
+    </feature>
+
+    <feature name="examples-akka-camel" version="5.0.1" resolver="(obr)">
+        <feature version="2.2.3">akka</feature>
+        <feature version="2.12.3">camel-scala</feature>
+        <bundle>mvn:org.apache.servicemix.examples/akka-camel/5.0.1</bundle>
+    </feature>
+
+</features>

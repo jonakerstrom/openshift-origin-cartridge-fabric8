@@ -80,7 +80,7 @@ function start() {
       echo "Application is already running"
   else    
     pushd ${OPENSHIFT_SERVICEMIX_DIR}/apache-servicemix
-    bin/servicemix > ${OPENSHIFT_TMP_DIR}/${cartridge_type}.log 2>&1 &
+    bin/start > ${OPENSHIFT_TMP_DIR}/${cartridge_type}.log 2>&1 &
     PROCESS_ID=$!
     popd
   fi

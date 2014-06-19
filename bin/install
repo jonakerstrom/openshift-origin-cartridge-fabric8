@@ -8,7 +8,7 @@ esac
 cp -r ${OPENSHIFT_SERVICEMIX_DIR}/versions/${version}/template/* ${OPENSHIFT_SERVICEMIX_DIR}/template
 cp -r ${OPENSHIFT_SERVICEMIX_DIR}/versions/${version}/template/.openshift ${OPENSHIFT_SERVICEMIX_DIR}/template
 mkdir -p ${OPENSHIFT_SERVICEMIX_DIR}/template/.openshift/config
-cp ${OPENSHIFT_SERVICEMIX_DIR}/apache-servicemix/conf/* ${OPENSHIFT_SERVICEMIX_DIR}/template/.openshift/config
+cp ${OPENSHIFT_SERVICEMIX_DIR}/apache-servicemix/etc/* ${OPENSHIFT_SERVICEMIX_DIR}/template/.openshift/config
 
 echo "$version" > "$OPENSHIFT_SERVICEMIX_DIR/env/OPENSHIFT_SERVICEMIX_VERSION"
 

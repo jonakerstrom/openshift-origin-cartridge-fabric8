@@ -7,7 +7,7 @@ License: Apache
 License-Url: http://www.apache.org/licenses/LICENSE-2.0.html
 Vendor: Apache
 Cartridge-Version: 0.0.1
-Cartridge-Vendor: Jon Åkerström
+Cartridge-Vendor: jon
 Source-Url: https://github.com/jonakerstrom/openshift-origin-cartridge-servicemix.git
 Categories:
   - service

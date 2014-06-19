@@ -4,8 +4,8 @@ source $OPENSHIFT_CARTRIDGE_SDK_BASH
 
 ACTIVEMQ_BIN_DIR=${OPENSHIFT_ACTIVEMQ_DIR}/bin
 
-cartridge_type="activemq"
-version=5.8
+cartridge_type="servicemix"
+version=5.0.1
 
 # Check if the server http port is up
 function ishttpup() {
@@ -26,12 +26,12 @@ function ishttpup() {
 }
 
 function build() {
-  echo "Building ActiveMQ"
+  echo "Building Servicemix"
 
 }
 
 function deploy() {
-  echo "Deploying ActiveMQ"
+  echo "Deploying Servicemix"
   
 }
 
@@ -43,20 +43,20 @@ function copy_conf() {
 	  do
 	    target=$(basename $f)
 	    # Remove any target that is being overwritten
-	    if [ -e "${OPENSHIFT_ACTIVEMQ_DIR}/apache-activemq/conf/$target" ]
+	    if [ -e "${OPENSHIFT_ACTIVEMQ_DIR}/apache-servicemix/conf/$target" ]
 	    then
 	       echo "Removing existing $target"
-	       rm -rf "${OPENSHIFT_ACTIVEMQ_DIR}/apache-activemq/conf/$target"
-	       cp ${OPENSHIFT_REPO_DIR}.openshift/config/$target ${OPENSHIFT_ACTIVEMQ_DIR}/apache-activemq/conf
+	       rm -rf "${OPENSHIFT_ACTIVEMQ_DIR}/apache-servicemix/conf/$target"
+	       cp ${OPENSHIFT_REPO_DIR}.openshift/config/$target ${OPENSHIFT_ACTIVEMQ_DIR}/apache-servicemix/conf
 	    fi
 	  done
 	else
-		cp ${OPENSHIFT_ACTIVEMQ_DIR}/versions/${version}/apache-activemq/conf/* ${OPENSHIFT_ACTIVEMQ_DIR}/apache-activemq/conf
+		cp ${OPENSHIFT_ACTIVEMQ_DIR}/versions/${version}/apache-servicemix/conf/* ${OPENSHIFT_ACTIVEMQ_DIR}/apache-servicemix/conf
 	fi
 }
 
 function replace_envs() {
-	for f in ${OPENSHIFT_ACTIVEMQ_DIR}/apache-activemq/conf/*.xml
+	for f in ${OPENSHIFT_ACTIVEMQ_DIR}/apache-servicemix/conf/*.xml
 	do
 		sed -i -e "s/\${env.OPENSHIFT_ACTIVEMQ_IP}/$OPENSHIFT_ACTIVEMQ_IP/g" \
 			$f
@@ -79,8 +79,8 @@ function start() {
   if isrunning; then
       echo "Application is already running"
   else    
-    pushd ${OPENSHIFT_ACTIVEMQ_DIR}/apache-activemq
-    bin/activemq start > ${OPENSHIFT_TMP_DIR}/${cartridge_type}.log 2>&1 &
+    pushd ${OPENSHIFT_ACTIVEMQ_DIR}/apache-servicemix
+    bin/servicemix start > ${OPENSHIFT_TMP_DIR}/${cartridge_type}.log 2>&1 &
     PROCESS_ID=$!
     popd
   fi
@@ -90,8 +90,8 @@ function start() {
 function stop() {
   	echo "Stopping $cartridge_type cart"
   
-	pushd ${OPENSHIFT_ACTIVEMQ_DIR}/apache-activemq
-		bin/activemq stop > ${OPENSHIFT_TMP_DIR}/${cartridge_type}.log 2>&1 &
+	pushd ${OPENSHIFT_ACTIVEMQ_DIR}/apache-servicemix
+		bin/servicemix stop > ${OPENSHIFT_TMP_DIR}/${cartridge_type}.log 2>&1 &
 	popd
 }
 
@@ -138,7 +138,7 @@ function threaddump() {
         client_result ""
         client_result "The thread dump file will be available via: rhc tail $OPENSHIFT_APP_NAME -f */logs/server.log -o '-n 250'"
     else 
-        echo "Failed to locate JBOSS PID File"
+        echo "Failed to locate Servicemix PID File"
     fi
 }
 

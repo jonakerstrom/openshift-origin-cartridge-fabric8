@@ -48,7 +48,7 @@ Provides:
   - "servicemix(version) = 5.0.1"
   - "servicemix(version) >= 5.01.1"
 Publishes:
- publish-http-url:
+  publish-http-url:
     Type: "NET_TCP:httpd-proxy-info"
   publish-gear-endpoint:
     Type: "NET_TCP:gear-endpoint-info"

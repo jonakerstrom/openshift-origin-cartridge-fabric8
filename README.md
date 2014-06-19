@@ -1,2 +1,2 @@
-openshift-origin-cartridge-activemq
+openshift-origin-cartridge-servicemix
 ===================================

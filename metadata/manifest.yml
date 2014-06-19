@@ -1,23 +1,23 @@
-Name: activemq
-Cartridge-Short-Name: ACTIVEMQ
-Display-Name: ActiveMQ
-Description: "Apache ActiveMQ is the most popular and powerful open source messaging and Integration Patterns server."
-Version: '5.8'
+Name: servicemix
+Cartridge-Short-Name: SERVICEMIX
+Display-Name: Servicemix
+Description: "Apache Servicemix is an powerful open source ESB."
+Version: '5.0.1'
 License: Apache
 License-Url: http://www.apache.org/licenses/LICENSE-2.0.html
-Vendor: Red Hat
+Vendor: Apache Software Foundation
 Cartridge-Version: 0.0.1
-Cartridge-Vendor: apache
-Source-Url: https://github.com/bdecoste/openshift-origin-cartridge-activemq.git
+Cartridge-Vendor: Jon Åkerström
+Source-Url: https://github.com/jonakerstrom/openshift-origin-cartridge-servicemix.git
 Categories:
   - service
   - database
   - embedded
-Website: http://activemq.apache.org
+Website: http://servicemix.apache.org
 Help-Topics:
   "Developer Center": https://www.openshift.com/developers
 Cart-Data:
-  - Key: OPENSHIFT_ACTIVEMQ_LOG_DIR
+  - Key: OPENSHIFT_SERVICEMIX_LOG_DIR
     Type: environment
     Description: "Directory to store application log files."
   - Key: OPENSHIFT_TMP_DIR
@@ -42,10 +42,10 @@ Cart-Data:
     Type: environment
     Description: "Unique ID which identified the gear. This value changes between gears."
 Provides:
-  - activemq-5.8
-  - "activemq"
-  - "activemq(version) = 5.8"
-  - "activemq(version) >= 5.8"
+  - apache-servicemix-5.0.1
+  - "servicemix"
+  - "servicemix(version) = 5.0.1"
+  - "servicemix(version) >= 5.01.1"
 Publishes:
   publish-generic-java:
     Type: "ENV:NET_TCP:generic-java"

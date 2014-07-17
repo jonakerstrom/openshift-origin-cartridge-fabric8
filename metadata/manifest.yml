@@ -62,7 +62,7 @@ Scaling:
   Max: -1
 Group-Overrides:
   - components:
-    - apache-servicemix-5.0.1
+    - apache-servicemix-5.1.0
     - web_proxy
 Endpoints:
   - Private-IP-Name:     IP

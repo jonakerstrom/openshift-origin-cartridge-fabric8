@@ -9,7 +9,7 @@ Versions:
 License: Apache
 License-Url: http://www.apache.org/licenses/LICENSE-2.0.html
 Vendor: Apache
-Cartridge-Version: 0.0.2
+Cartridge-Version: 0.1
 Cartridge-Vendor: jon
 Source-Url: https://gitlab.redpill-linpro.com/integration-brokerage/openshift-origin-cartridge-servicemix.git
 Categories:

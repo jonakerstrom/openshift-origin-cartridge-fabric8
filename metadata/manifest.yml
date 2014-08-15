@@ -1,7 +1,7 @@
 Name: fabric8
 Cartridge-Short-Name: FABRIC8
 Display-Name: Fabric8
-Description: "Apache Fabric8 is an powerful open source ESB."
+Description: "Fabric8 is an powerful open source ESB."
 Version: '1.1.0'
 Versions:
   - '1.1.0'
@@ -16,7 +16,7 @@ Categories:
   - service
   - database
   - embedded
-Website: http://fabric8.apache.org
+Website: http://fabric8.io
 Help-Topics:
   "Developer Center": https://www.openshift.com/developers
 Cart-Data:

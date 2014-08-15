@@ -5,7 +5,7 @@ source $OPENSHIFT_CARTRIDGE_SDK_BASH
 FABRIC8_BIN_DIR=${OPENSHIFT_FABRIC8_DIR}/bin
 
 cartridge_type="fabric8"
-version=5.1.0
+version=1.1.0.CR5
 
 # Check if the server http port is up
 function ishttpup() {
@@ -43,20 +43,20 @@ function copy_conf() {
 	  do
 	    target=$(basename $f)
 	    # Remove any target that is being overwritten
-	    if [ -e "${OPENSHIFT_FABRIC8_DIR}/apache-fabric8/etc/$target" ]
+	    if [ -e "${OPENSHIFT_FABRIC8_DIR}/fabric8/etc/$target" ]
 	    then
 	       echo "Removing existing $target"
-	       rm -rf "${OPENSHIFT_FABRIC8_DIR}/apache-fabric8/etc/$target"
-	       cp ${OPENSHIFT_REPO_DIR}.openshift/config/$target ${OPENSHIFT_FABRIC8_DIR}/apache-fabric8/etc
+	       rm -rf "${OPENSHIFT_FABRIC8_DIR}/fabric8/etc/$target"
+	       cp ${OPENSHIFT_REPO_DIR}.openshift/config/$target ${OPENSHIFT_FABRIC8_DIR}/fabric8/etc
 	    fi
 	  done
 	else
-		cp ${OPENSHIFT_FABRIC8_DIR}/versions/${version}/apache-fabric8/etc/* ${OPENSHIFT_FABRIC8_DIR}/apache-fabric8/etc
+		cp ${OPENSHIFT_FABRIC8_DIR}/versions/${version}/fabric8/etc/* ${OPENSHIFT_FABRIC8_DIR}/fabric8/etc
 	fi
 }
 
 function replace_envs() {
-	for f in ${OPENSHIFT_FABRIC8_DIR}/apache-fabric8/etc/*
+	for f in ${OPENSHIFT_FABRIC8_DIR}/fabric8/etc/*
 	do
 		sed -i -e "s/\${env.OPENSHIFT_FABRIC8_IP}/$OPENSHIFT_FABRIC8_IP/g" \
 			$f
@@ -79,7 +79,7 @@ function start() {
   if isrunning; then
       echo "Application is already running"
   else    
-    pushd ${OPENSHIFT_FABRIC8_DIR}/apache-fabric8
+    pushd ${OPENSHIFT_FABRIC8_DIR}/fabric8
     bin/start > ${OPENSHIFT_TMP_DIR}/${cartridge_type}.log 2>&1 &
     PROCESS_ID=$!
     popd
@@ -92,7 +92,7 @@ function stop() {
 
 	kill -2 ${PROCESS_ID}
 
-	#pushd ${OPENSHIFT_FABRIC8_DIR}/apache-fabric8
+	#pushd ${OPENSHIFT_FABRIC8_DIR}/fabric8
 	#	bin/fabric8 stop > ${OPENSHIFT_TMP_DIR}/${cartridge_type}.log 2>&1 &
 	#popd
 }

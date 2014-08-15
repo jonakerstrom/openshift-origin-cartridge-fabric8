@@ -1,27 +1,26 @@
-Name: servicemix
-Cartridge-Short-Name: SERVICEMIX
-Display-Name: Servicemix
-Description: "Apache Servicemix is an powerful open source ESB."
-Version: '5.1.0'
+Name: fabric8
+Cartridge-Short-Name: FABRIC8
+Display-Name: Fabric8
+Description: "Apache Fabric8 is an powerful open source ESB."
+Version: '1.1.0.CR5'
 Versions:
-  - '5.1.0'
-  - '5.0.1'
+  - '1.1.0.CR5'
 License: Apache
 License-Url: http://www.apache.org/licenses/LICENSE-2.0.html
 Vendor: Apache
 Cartridge-Version: 0.1
 Cartridge-Vendor: jon
-Source-Url: https://gitlab.redpill-linpro.com/integration-brokerage/openshift-origin-cartridge-servicemix.git
+Source-Url: https://gitlab.redpill-linpro.com/integration-brokerage/openshift-origin-cartridge-fabric8.git
 Categories:
   - web_framework
   - service
   - database
   - embedded
-Website: http://servicemix.apache.org
+Website: http://fabric8.apache.org
 Help-Topics:
   "Developer Center": https://www.openshift.com/developers
 Cart-Data:
-  - Key: OPENSHIFT_SERVICEMIX_LOG_DIR
+  - Key: OPENSHIFT_FABRIC8_LOG_DIR
     Type: environment
     Description: "Directory to store application log files."
   - Key: OPENSHIFT_TMP_DIR
@@ -46,10 +45,10 @@ Cart-Data:
     Type: environment
     Description: "Unique ID which identified the gear. This value changes between gears."
 Provides:
-  - apache-servicemix-5.1.0
-  - "servicemix"
-  - "servicemix(version) = 5.1.0"
-  - "servicemix(version) >= 5.0.1"
+  - apache-fabric8-1.1.0.CR5
+  - "fabric8"
+  - "fabric8(version) = 1.1.0.CR5"
+  - "fabric8(version) >= 1.1.0.CR5"
 Publishes:
   publish-http-url:
     Type: "NET_TCP:httpd-proxy-info"
@@ -62,7 +61,7 @@ Scaling:
   Max: -1
 Group-Overrides:
   - components:
-    - apache-servicemix-5.1.0
+    - apache-fabric8-1.1.0.CR5
     - web_proxy
 Endpoints:
   - Private-IP-Name:     IP

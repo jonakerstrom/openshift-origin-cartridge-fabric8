@@ -2,9 +2,9 @@
 
 source $OPENSHIFT_CARTRIDGE_SDK_BASH
 
-SERVICEMIX_BIN_DIR=${OPENSHIFT_SERVICEMIX_DIR}/bin
+FABRIC8_BIN_DIR=${OPENSHIFT_FABRIC8_DIR}/bin
 
-cartridge_type="servicemix"
+cartridge_type="fabric8"
 version=5.1.0
 
 # Check if the server http port is up
@@ -13,8 +13,8 @@ function ishttpup() {
     let count=0
     while [ ${count} -lt 24 ]
     do
-        if /usr/sbin/lsof -P -n -i "@${OPENSHIFT_SERVICEMIX_IP}:${OPENSHIFT_SERVICEMIX_HTTP_PORT}" | grep "(LISTEN)" > /dev/null; then
-            echo "Found ${OPENSHIFT_SERVICEMIX_IP}:${OPENSHIFT_SERVICEMIX_HTTP_PORT} listening port"
+        if /usr/sbin/lsof -P -n -i "@${OPENSHIFT_FABRIC8_IP}:${OPENSHIFT_FABRIC8_HTTP_PORT}" | grep "(LISTEN)" > /dev/null; then
+            echo "Found ${OPENSHIFT_FABRIC8_IP}:${OPENSHIFT_FABRIC8_HTTP_PORT} listening port"
             return 0
         fi
         let count=${count}+1
@@ -26,12 +26,12 @@ function ishttpup() {
 }
 
 function build() {
-  echo "Building Servicemix"
+  echo "Building Fabric8"
 
 }
 
 function deploy() {
-  echo "Deploying Servicemix"
+  echo "Deploying Fabric8"
   
 }
 
@@ -43,22 +43,22 @@ function copy_conf() {
 	  do
 	    target=$(basename $f)
 	    # Remove any target that is being overwritten
-	    if [ -e "${OPENSHIFT_SERVICEMIX_DIR}/apache-servicemix/etc/$target" ]
+	    if [ -e "${OPENSHIFT_FABRIC8_DIR}/apache-fabric8/etc/$target" ]
 	    then
 	       echo "Removing existing $target"
-	       rm -rf "${OPENSHIFT_SERVICEMIX_DIR}/apache-servicemix/etc/$target"
-	       cp ${OPENSHIFT_REPO_DIR}.openshift/config/$target ${OPENSHIFT_SERVICEMIX_DIR}/apache-servicemix/etc
+	       rm -rf "${OPENSHIFT_FABRIC8_DIR}/apache-fabric8/etc/$target"
+	       cp ${OPENSHIFT_REPO_DIR}.openshift/config/$target ${OPENSHIFT_FABRIC8_DIR}/apache-fabric8/etc
 	    fi
 	  done
 	else
-		cp ${OPENSHIFT_SERVICEMIX_DIR}/versions/${version}/apache-servicemix/etc/* ${OPENSHIFT_SERVICEMIX_DIR}/apache-servicemix/etc
+		cp ${OPENSHIFT_FABRIC8_DIR}/versions/${version}/apache-fabric8/etc/* ${OPENSHIFT_FABRIC8_DIR}/apache-fabric8/etc
 	fi
 }
 
 function replace_envs() {
-	for f in ${OPENSHIFT_SERVICEMIX_DIR}/apache-servicemix/etc/*
+	for f in ${OPENSHIFT_FABRIC8_DIR}/apache-fabric8/etc/*
 	do
-		sed -i -e "s/\${env.OPENSHIFT_SERVICEMIX_IP}/$OPENSHIFT_SERVICEMIX_IP/g" \
+		sed -i -e "s/\${env.OPENSHIFT_FABRIC8_IP}/$OPENSHIFT_FABRIC8_IP/g" \
 			$f
 	done
 }
@@ -79,7 +79,7 @@ function start() {
   if isrunning; then
       echo "Application is already running"
   else    
-    pushd ${OPENSHIFT_SERVICEMIX_DIR}/apache-servicemix
+    pushd ${OPENSHIFT_FABRIC8_DIR}/apache-fabric8
     bin/start > ${OPENSHIFT_TMP_DIR}/${cartridge_type}.log 2>&1 &
     PROCESS_ID=$!
     popd
@@ -92,8 +92,8 @@ function stop() {
 
 	kill -2 ${PROCESS_ID}
 
-	#pushd ${OPENSHIFT_SERVICEMIX_DIR}/apache-servicemix
-	#	bin/servicemix stop > ${OPENSHIFT_TMP_DIR}/${cartridge_type}.log 2>&1 &
+	#pushd ${OPENSHIFT_FABRIC8_DIR}/apache-fabric8
+	#	bin/fabric8 stop > ${OPENSHIFT_TMP_DIR}/${cartridge_type}.log 2>&1 &
 	#popd
 }
 
@@ -121,9 +121,9 @@ function reload() {
 
 # Clean up any log files
 function tidy() {
-  client_message "Emptying log dir: $OPENSHIFT_SERVICEMIX_LOG_DIR"
+  client_message "Emptying log dir: $OPENSHIFT_FABRIC8_LOG_DIR"
   shopt -s dotglob
-  rm -rf $OPENSHIFT_SERVICEMIX_LOG_DIR/*
+  rm -rf $OPENSHIFT_FABRIC8_LOG_DIR/*
 }
 
 function threaddump() {
@@ -132,15 +132,15 @@ function threaddump() {
     if ! isrunning; then
         echo "Application is stopped"
         exit 1
-    elif [ -f "$SERVICEMIX_PID_FILE" ]; then
-        pid=$(cat $SERVICEMIX_PID_FILE);
+    elif [ -f "$FABRIC8_PID_FILE" ]; then
+        pid=$(cat $FABRIC8_PID_FILE);
         java_pid=$(ps h --ppid $pid -o '%p')
         kill -3 $java_pid
         client_result "Success"
         client_result ""
         client_result "The thread dump file will be available via: rhc tail $OPENSHIFT_APP_NAME -f */logs/server.log -o '-n 250'"
     else 
-        echo "Failed to locate Servicemix PID File"
+        echo "Failed to locate Fabric8 PID File"
     fi
 }
 

@@ -1,2 +1,2 @@
-openshift-origin-cartridge-servicemix
+openshift-origin-cartridge-fabric8
 ===================================

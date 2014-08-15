@@ -2,9 +2,9 @@ Name: fabric8
 Cartridge-Short-Name: FABRIC8
 Display-Name: Fabric8
 Description: "Apache Fabric8 is an powerful open source ESB."
-Version: '1.1.0.CR5'
+Version: '1.1.0'
 Versions:
-  - '1.1.0.CR5'
+  - '1.1.0'
 License: Apache
 License-Url: http://www.apache.org/licenses/LICENSE-2.0.html
 Vendor: Apache
@@ -45,10 +45,10 @@ Cart-Data:
     Type: environment
     Description: "Unique ID which identified the gear. This value changes between gears."
 Provides:
-  - apache-fabric8-1.1.0.CR5
+  - fabric8-1.1.0
   - "fabric8"
-  - "fabric8(version) = 1.1.0.CR5"
-  - "fabric8(version) >= 1.1.0.CR5"
+  - "fabric8(version) = 1.1.0"
+  - "fabric8(version) >= 1.1.0"
 Publishes:
   publish-http-url:
     Type: "NET_TCP:httpd-proxy-info"
@@ -61,7 +61,7 @@ Scaling:
   Max: -1
 Group-Overrides:
   - components:
-    - apache-fabric8-1.1.0.CR5
+    - fabric8-1.1.0
     - web_proxy
 Endpoints:
   - Private-IP-Name:     IP

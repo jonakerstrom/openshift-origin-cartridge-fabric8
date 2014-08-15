@@ -11,5 +11,5 @@ gip=$(facter ipaddress)
 #
 # Publish this gear's HTTP URL/endpoint.
 #
-echo "${OPENSHIFT_GEAR_DNS}|${gip}:${OPENSHIFT_SERVICEMIX_HTTP_PROXY_PORT}"
+echo "${OPENSHIFT_GEAR_DNS}|${gip}:${OPENSHIFT_FABRIC8_HTTP_PROXY_PORT}"
 

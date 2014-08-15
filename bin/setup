@@ -5,7 +5,7 @@ case "$1" in
     version="$2"
 esac
 
-mkdir -p ${OPENSHIFT_SERVICEMIX_DIR}/template
+mkdir -p ${OPENSHIFT_FABRIC8_DIR}/template
 
-cp -r ${OPENSHIFT_SERVICEMIX_DIR}/versions/${version}/apache-servicemix ${OPENSHIFT_SERVICEMIX_DIR}/apache-servicemix
+cp -r ${OPENSHIFT_FABRIC8_DIR}/versions/${version}/fabric8 ${OPENSHIFT_FABRIC8_DIR}/fabric8
 

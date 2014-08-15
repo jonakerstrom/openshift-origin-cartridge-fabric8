@@ -11,4 +11,4 @@ gip=$(facter ipaddress);
 #
 # Publish this gear's endpoint.
 # 
-echo "${OPENSHIFT_GEAR_UUID}@${gip}:servicemix;$OPENSHIFT_GEAR_DNS"
+echo "${OPENSHIFT_GEAR_UUID}@${gip}:fabric8;$OPENSHIFT_GEAR_DNS"

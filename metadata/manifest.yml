@@ -23,6 +23,12 @@ Cart-Data:
   - Key: OPENSHIFT_FABRIC8_LOG_DIR
     Type: environment
     Description: "Directory to store application log files."
+  - Key: FABRIC8_ZOOKEEPER_URL
+    Type: environment
+    Description: "The url to zookeeper."
+  - Key: FABRIC8_ZOOKEEPER_PASSWORD
+    Type: environment
+    Description: "The zookeeper password."
   - Key: MAVEN_UPLOAD_URL
     Type: environment
     Description: "The url to the fabric maven proxy."
@@ -80,11 +86,6 @@ Endpoints:
       - Frontend:      "/health"
         Backend:       ""
         Options:       { health: true }
-  - Private-IP-Name:   IP
-    Private-Port-Name: ZOOKEEPER_PORT
-    Private-Port:      3128
-    Public-Port-Name:  ZOOKEEPER_PROXY_PORT
-    Options:           { "ssl_to_gear": true }
   - Private-IP-Name:   IP
     Private-Port-Name: AMQP_PORT
     Private-Port:      4447

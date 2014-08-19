@@ -12,52 +12,30 @@ This product includes/uses software(s) developed by 'an unknown organization'
   - Unnamed - log4j:log4j:jar:1.2.12
   - Unnamed - logkit:logkit:jar:1.0.1
 
-Apache Karaf
-Copyright 2010-2012 The Apache Software Foundation
+Apache Commons BeanUtils
+Copyright 2000-2010 The Apache Software Foundation
 
-
-I. Included Software
-
-This product includes software developed at
+This product includes software developed by
 The Apache Software Foundation (http://www.apache.org/).
-Licensed under the Apache License 2.0.
 
-This product includes software written by
-Antony Lesuisse.
-Licensed under Public Domain.
 
-II. Used Software
+Commons Logging
+Copyright 2001-2007 The Apache Software Foundation
 
-This product uses software developed at
-The OSGi Alliance (http://www.osgi.org/).
-Copyright (c) OSGi Alliance (2000, 2010).
-Licensed under the Apache License 2.0.
+Apache Commons Codec
+Copyright 2002-2009 The Apache Software Foundation
 
-This product uses software developed at
-OPS4J (http://www.ops4j.org/).
-Licensed under the Apache License 2.0.
+--------------------------------------------------------------------------------
+src/test/org/apache/commons/codec/language/DoubleMetaphoneTest.java contains 
+test data from http://aspell.sourceforge.net/test/batch0.tab.
 
-This product uses software developed at
-FUSE Source (http://www.fusesource.org/).
-Licensed under the Apache License 2.0.
+Copyright (C) 2002 Kevin Atkinson (kevina@gnu.org). Verbatim copying
+and distribution of this entire article is permitted in any medium,
+provided this notice is preserved.
+--------------------------------------------------------------------------------
 
-This product uses software developed at
-Tanuki Software (http://www.tanukisoftware.com/).
-Licensed under the Apache License 2.0.
-
-This product uses software developed at
-JLine (http://jline.sourceforge.net).
-Licensed under the BSD License.
-
-This product uses software developed at
-SLF4J (http://www.slf4j.org/).
-Licensed under the MIT License.
-
-This product includes software from http://www.json.org.
-Copyright (c) 2002 JSON.org
-
-III. License Summary
-- Apache License 2.0
+Apache Commons IO
+Copyright 2002-2012 The Apache Software Foundation
 
 Annotations for SCR
 Copyright 2006-2014 The Apache Software Foundation
@@ -65,50 +43,71 @@ Copyright 2006-2014 The Apache Software Foundation
 This product includes software developed at
 The Apache Software Foundation (http://www.apache.org/).
 
+Apache HttpComponents HttpClient
+Copyright 1999-2012 The Apache Software Foundation
+
+This project contains annotations derived from JCIP-ANNOTATIONS
+Copyright (c) 2005 Brian Goetz and Tim Peierls. See http://www.jcip.net
+
 Maven Aether Provider
 Copyright 2001-2012 The Apache Software Foundation
 
-Maven Model Builder
-Copyright 2001-2012 The Apache Software Foundation
+Apache Maven Wagon :: Providers :: File Provider
+Copyright 2003-2013 The Apache Software Foundation
 
-Maven Model
-Copyright 2001-2012 The Apache Software Foundation
+Apache Maven Wagon :: Providers :: Lightweight HTTP Provider
+Copyright 2003-2013 The Apache Software Foundation
 
-Maven Repository Metadata Model
-Copyright 2001-2012 The Apache Software Foundation
+Apache Maven Wagon :: Providers :: HTTP Shared Library
+Copyright 2003-2013 The Apache Software Foundation
 
-Maven Settings Builder
-Copyright 2001-2012 The Apache Software Foundation
+Apache Jakarta HttpClient
+Copyright 1999-2007 The Apache Software Foundation
 
-Maven Settings
-Copyright 2001-2012 The Apache Software Foundation
+ActiveMQ :: Broker
+Copyright 2005-2014 The Apache Software Foundation
 
-Maven Wagon API
-Copyright 2003-2009 The Apache Software Foundation
+ActiveMQ :: Client
+Copyright 2005-2014 The Apache Software Foundation
 
-Maven Wagon File Provider
-Copyright 2003-2009 The Apache Software Foundation
+ActiveMQ :: Openwire Legacy Support
+Copyright 2005-2014 The Apache Software Foundation
 
-Maven Wagon Lightweight HTTP Provider
-Copyright 2003-2009 The Apache Software Foundation
+ActiveMQ :: Spring
+Copyright 2005-2014 The Apache Software Foundation
 
-Maven Wagon HTTP Shared Library
-Copyright 2003-2009 The Apache Software Foundation
+   This product includes software developed by
+   The Apache Software Foundation (http://www.apache.org/).
 
-This product includes software developed by the Indiana University 
-  Extreme! Lab (http://www.extreme.indiana.edu/).
+Spring Framework 3.2.9.RELEASE
+Copyright (c) 2002-2014 Pivotal, Inc.
 
-This product includes software developed by 
-The Apache Software Foundation (http://www.apache.org/).
+This product is licensed to you under the Apache License, Version 2.0
+(the "License"). You may not use this product except in compliance with
+the License.
 
-This product includes software developed by 
-ThoughtWorks (http://www.thoughtworks.com).
+This product may include a number of subcomponents with separate
+copyright notices and license terms. Your use of the source code for
+these subcomponents is subject to the terms and conditions of the
+subcomponent's license, as noted in the license.txt file.
 
-This product includes software developed by 
-javolution (http://javolution.org/).
+Apache log4j
+Copyright 2007 The Apache Software Foundation
 
-This product includes software developed by 
-Rome (https://rome.dev.java.net/).
+Apache Felix Utils
+Copyright 2006-2014 The Apache Software Foundation
+
+Curator Framework
+Copyright 2011-2014 The Apache Software Foundation
+
+Curator Client
+Copyright 2011-2014 The Apache Software Foundation
+
+Curator Recipes
+Copyright 2011-2014 The Apache Software Foundation
+
+Apache ServiceMix
+Copyright 2007-2014 The Apache Software Foundation
 
 # Jackson JSON processor
 
@@ -240,9 +239,6 @@ WebSocket and HTTP server:
 
 Apache Lucene
 Copyright 2014 The Apache Software Foundation
-
-This product includes software developed by
-The Apache Software Foundation (http://www.apache.org/).
 
 Includes software from other Apache Software Foundation projects,
 including, but not limited to:
@@ -430,9 +426,6 @@ writing, such person, organization or entity, will also be exempted
 from and not be held liable to the user for any such damages as noted
 above as far as the program is concerned.
 
-Apache log4j
-Copyright 2007 The Apache Software Foundation
-
   * http://www.jboss.org/netty/
 
 Copyright 2009 Red Hat, Inc.
@@ -447,18 +440,6 @@ Unless required by applicable law or agreed to in writing, software distributed
 under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
 CONDITIONS OF ANY KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations under the License.
-
-Apache HttpComponents HttpClient
-Copyright 1999-2012 The Apache Software Foundation
-
-This project contains annotations derived from JCIP-ANNOTATIONS
-Copyright (c) 2005 Brian Goetz and Tim Peierls. See http://www.jcip.net
-
-Apache Jakarta HttpClient
-Copyright 1999-2007 The Apache Software Foundation
-
-Apache Commons IO
-Copyright 2002-2012 The Apache Software Foundation
 
 Apache CXF
 Copyright 2006-2014 The Apache Software Foundation
@@ -487,9 +468,6 @@ Copyright (C) 2000-2007 The Apache Software Foundation
 Apache Geronimo JAX-WS Spec 2.2
 Copyright 2003-2011 The Apache Software Foundation
 
-Apache Geronimo 
-Copyright 2003-2008 The Apache Software Foundation
-
 Apache HttpComponents HttpCore NIO
 Copyright 2005-2013 The Apache Software Foundation
 
@@ -505,18 +483,45 @@ Copyright 2004-2014 The Apache Software Foundation
 Apache XML Security for Java
 Copyright 2000-2013 The Apache Software Foundation
 
-=============================================================================
-= NOTICE file corresponding to section 4d of the Apache License Version 2.0 =
-=============================================================================
-This product includes software developed by
-Joda.org (http://www.joda.org/).
-
 Apache Neethi
 Copyright 2004-2014 The Apache Software Foundation
 
 This product is tested with testcases developed at W3C under the license:
 http://www.w3.org/Consortium/Legal/2002/copyright-documents-20021231
 The source distribution of this product includes those testcases.
+
+Maven Model Builder
+Copyright 2001-2012 The Apache Software Foundation
+
+Maven Model
+Copyright 2001-2012 The Apache Software Foundation
+
+Maven Repository Metadata Model
+Copyright 2001-2012 The Apache Software Foundation
+
+Maven Settings Builder
+Copyright 2001-2012 The Apache Software Foundation
+
+Maven Settings
+Copyright 2001-2012 The Apache Software Foundation
+
+Maven Wagon API
+Copyright 2003-2009 The Apache Software Foundation
+
+This product includes software developed by the Indiana University 
+  Extreme! Lab (http://www.extreme.indiana.edu/).
+
+This product includes software developed by 
+The Apache Software Foundation (http://www.apache.org/).
+
+This product includes software developed by 
+ThoughtWorks (http://www.thoughtworks.com).
+
+This product includes software developed by 
+javolution (http://javolution.org/).
+
+This product includes software developed by 
+Rome (https://rome.dev.java.net/).
 
    Copyright (c) 2007-2010, The JASYPT team (http://www.jasypt.org)
 
@@ -600,43 +605,573 @@ holder shall not be used in advertising or otherwise to
 promote the sale, use or other dealings in this Software 
 without prior written authorization of the copyright holder. 
 
-Curator Framework
-Copyright 2011-2014 The Apache Software Foundation
+Apache Karaf
+Copyright 2010-2014 The Apache Software Foundation
 
-Curator Client
-Copyright 2011-2014 The Apache Software Foundation
+I. Included Software
 
-Curator Recipes
-Copyright 2011-2014 The Apache Software Foundation
+This product includes software developed at
+The Apache Software Foundation (http://www.apache.org/).
+Licensed under the Apache License 2.0.
 
-Apache ServiceMix
-Copyright 2007-2014 The Apache Software Foundation
+This product uses software developed at
+The OSGi Alliance (http://www.osgi.org/).
+Copyright (c) OSGi Alliance (2000, 2010).
+Licensed under the Apache License 2.0.
 
-Apache Commons Collections
-Copyright 2001-2008 The Apache Software Foundation
+This product includes software developed at
+OW2 (http://www.ow2.org/).
+Licensed under the BSD License.
+
+This product includes software developed at
+OPS4J (http://www.ops4j.org/).
+Licensed under the Apache License 2.0.
+
+This product includes software developed at
+Eclipse Foundation (http://www.eclipse.org/).
+Licensed under the EPL.
+
+This product includes software written by
+Antony Lesuisse.
+Licensed under Public Domain.
+
+II. Used Software
+
+This product uses software developed at
+FUSE Source (http://www.fusesource.org/).
+Licensed under the Apache License 2.0.
+
+This product uses software developed at
+AOP Alliance (http://aopalliance.sourceforge.net/).
+Licensed under Public Domain.
+
+This product uses software developed at
+Tanuki Software (http://www.tanukisoftware.com/).
+Licensed under the Apache License 2.0.
+
+This product uses software developed at
+Jasypt (http://jasypt.sourceforge.net/).
+Licensed under the Apache License 2.0.
+
+This product uses software developed at
+JLine (http://jline.sourceforge.net).
+Licensed under the BSD License.
+
+This product uses software developed at
+SLF4J (http://www.slf4j.org/).
+Licensed under the MIT License.
+
+This product uses software developed at
+SpringSource (http://www.springsource.org/).
+Licensed under the Apache License 2.0.
+
+This product includes software from http://www.json.org.
+Copyright (c) 2002 JSON.org
+
+III. License Summary
+- Apache License 2.0
+- BSD License
+- EPL License
+- MIT License
+
+Apache Felix Framework
+Copyright 2006-2014 The Apache Software Foundation
+
+This product includes software developed at
+The OSGi Alliance (http://www.osgi.org/).
+Copyright (c) OSGi Alliance (2000, 2012).
+Licensed under the Apache License 2.0.
 
 Jackson core and extension components may be licensed under different licenses.
 To find the details that apply to this artifact see the accompanying LICENSE file.
 For more information, including possible other licensing options, contact
 FasterXML.com (http://fasterxml.com).
 
-Apache Commons Codec
-Copyright 2002-2011 The Apache Software Foundation
+=============================================================================
+= NOTICE file corresponding to section 4d of the Apache License Version 2.0 =
+=============================================================================
+This product includes software developed by
+Joda.org (http://www.joda.org/).
 
---------------------------------------------------------------------------------
-src/test/org/apache/commons/codec/language/DoubleMetaphoneTest.java contains 
-test data from http://aspell.sourceforge.net/test/batch0.tab.
+Apache Commons Collections
+Copyright 2001-2008 The Apache Software Foundation
 
-Copyright (C) 2002 Kevin Atkinson (kevina@gnu.org). Verbatim copying
-and distribution of this entire article is permitted in any medium,
-provided this notice is preserved.
---------------------------------------------------------------------------------
+Apache Commons Net
+Copyright 2001-2013 The Apache Software Foundation
 
-Apache Commons BeanUtils
-Copyright 2000-2010 The Apache Software Foundation
+Apache Commons Pool
+Copyright 2001-2012 The Apache Software Foundation
 
-Commons Logging
-Copyright 2001-2007 The Apache Software Foundation
+Java Authentication SPI for Containers
+Copyright 2003-2009 The Apache Software Foundation
+
+Activation 1.1
+Copyright 2003-2007 The Apache Software Foundation
+
+JavaMail 1.4
+Copyright 2003-2010 The Apache Software Foundation
+
+Apache ServiceMix :: Bundles :: reflections
+Copyright 2005-2013 The Apache Software Foundation
+
+Apache ServiceMix :: Bundles :: spring-beans
+Copyright 2005-2014 The Apache Software Foundation
+
+Apache ServiceMix :: Bundles :: swagger-core_2.10
+Copyright 2005-2014 The Apache Software Foundation
+
+Apache ServiceMix
+Copyright 2005-2011 The Apache Software Foundation
+
+Streaming API for XML (STAX API 1.0)
+Copyright 2003-2007 The Apache Software Foundation
+
+Apache Geronimo 
+Copyright 2003-2008 The Apache Software Foundation
+
+Apache ServiceMix :: Bundles :: jsch
+Copyright 2005-2012 The Apache Software Foundation
+
+Apache ServiceMix :: Bundles :: wsdl4j
+Copyright 2005-2013 The Apache Software Foundation
+
+Apache ServiceMix
+Copyright 2005-2012 The Apache Software Foundation
+
+Apache ServiceMix :: Bundles :: spring-core
+Copyright 2005-2014 The Apache Software Foundation
+
+Apache ServiceMix :: Bundles :: xstream
+Copyright 2005-2014 The Apache Software Foundation
+
+Apache ServiceMix :: Bundles :: velocity
+Copyright 2005-2012 The Apache Software Foundation
+
+Apache ServiceMix :: Bundles :: spring-context
+Copyright 2005-2014 The Apache Software Foundation
+
+Apache ServiceMix :: Bundles :: cglib
+Copyright 2005-2013 The Apache Software Foundation
+
+Apache ServiceMix :: Bundles :: swagger-annotations
+Copyright 2005-2014 The Apache Software Foundation
+
+Apache ServiceMix :: Bundles :: json4s
+Copyright 2005-2013 The Apache Software Foundation
+
+Apache ServiceMix :: Bundles :: swagger-jaxrs_2.10
+Copyright 2005-2014 The Apache Software Foundation
+
+Apache ServiceMix :: Bundles :: spring-aop
+Copyright 2005-2014 The Apache Software Foundation
+
+Apache ServiceMix :: Bundles :: jackson-module-scala_2.10
+Copyright 2005-2013 The Apache Software Foundation
+
+Apache ServiceMix :: Bundles :: spring-expression
+Copyright 2005-2014 The Apache Software Foundation
+
+Apache ServiceMix :: Bundles :: jasypt
+Copyright 2005-2013 The Apache Software Foundation
+
+Apache ServiceMix :: Bundles :: spring-context-support
+Copyright 2005-2014 The Apache Software Foundation
+
+Apache ServiceMix :: Bundles :: spring-tx
+Copyright 2005-2014 The Apache Software Foundation
+
+Apache ServiceMix :: Bundles :: FastInfoset
+Copyright 2005-2013 The Apache Software Foundation
+
+Apache ServiceMix
+Copyright 2007-2012 The Apache Software Foundation
+
+Apache Geronimo 
+Copyright 2003-2006 The Apache Software Foundation
+
+Apache MINA Core
+Copyright 2004-2012 Apache MINA Project
+
+ActiveMQ :: OSGi bundle
+Copyright 2005-2014 The Apache Software Foundation
+
+ActiveMQ :: KahaDB Store
+Copyright 2005-2014 The Apache Software Foundation
+
+=========================================================================
+==  Apache Notice                                                      ==
+=========================================================================
+
+Apache ActiveMQ
+Copyright 2005-2008 The Apache Software Foundation
+
+=========================================================================
+==  Protocol Buffers Notice                                            ==
+=========================================================================
+
+This product includes software developed by the Protocol Buffers
+project (http://code.google.com/apis/protocolbuffers).
+
+ActiveMQ :: JDBC Store
+Copyright 2005-2014 The Apache Software Foundation
+
+ActiveMQ :: LevelDB Store
+Copyright 2005-2014 The Apache Software Foundation
+
+This product currently only contains code developed by authors
+of specific components, as identified by the source code files;
+if such notes are missing files have been created by
+Tatu Saloranta.
+
+For additional credits (generally to people who reported problems)
+see CREDITS file.
+
+Apache Commons Configuration
+Copyright 2001-2012 The Apache Software Foundation
+
+   =========================================================================
+   ==  NOTICE file corresponding to the section 4 d of                    ==
+   ==  the Apache License, Version 2.0,                                   ==
+   ==  in this case for the Apache Ant distribution.                      ==
+   =========================================================================
+
+   This product includes also software developed by :
+     - the W3C consortium (http://www.w3c.org) ,
+     - the SAX project (http://www.saxproject.org)
+
+   Please read the different LICENSE files present in the root directory of
+   this distribution.
+
+ActiveMQ :: STOMP Protocol
+Copyright 2005-2014 The Apache Software Foundation
+
+ActiveMQ :: AMQP
+Copyright 2005-2014 The Apache Software Foundation
+
+proton-jms
+Copyright 2014 The Apache Software Foundation
+
+proton-j
+Copyright 2014 The Apache Software Foundation
+
+ActiveMQ :: MQTT Protocol
+Copyright 2005-2014 The Apache Software Foundation
+
+ActiveMQ :: HTTP Protocol Support
+Copyright 2005-2014 The Apache Software Foundation
+
+ActiveMQ :: Partition Management
+Copyright 2005-2014 The Apache Software Foundation
+
+   Apache Ant
+   Copyright 1999-2010 The Apache Software Foundation
+
+   The <sync> task is based on code Copyright (c) 2002, Landmark
+   Graphics Corp that has been kindly donated to the Apache Software
+   Foundation.
+
+ActiveMQ :: JAAS
+Copyright 2005-2014 The Apache Software Foundation
+
+ActiveMQ :: Console
+Copyright 2005-2014 The Apache Software Foundation
+
+Apache Commons Daemon
+Copyright 1999-2013 The Apache Software Foundation
+
+ActiveMQ :: RA
+Copyright 2005-2014 The Apache Software Foundation
+
+ActiveMQ :: Web
+Copyright 2005-2014 The Apache Software Foundation
+
+==============================================================
+ Jetty Web Container
+ Copyright 1995-2006 Mort Bay Consulting Pty Ltd
+==============================================================
+
+This product includes some software developed at The Apache Software
+Foundation (http://www.apache.org/).
+
+The javax.servlet package used by Jetty is copyright
+Sun Microsystems, Inc and Apache Software Foundation. It is
+distributed under the Common Development and Distribution License.
+You can obtain a copy of the license at
+https://glassfish.dev.java.net/public/CDDLv1.0.html.
+
+The UnixCrypt.java code ~Implements the one way cryptography used by
+Unix systems for simple password protection.  Copyright 1996 Aki Yoshida,
+modified April 2001  by Iris Van den Broeke, Daniel Deville.
+
+The default JSP implementation is provided by the Glassfish JSP engine
+from project Glassfish http://glassfish.dev.java.net.  Copyright 2005
+Sun Microsystems, Inc. and portions Copyright Apache Software Foundation.
+
+Some portions of the code are Copyright:
+  2006 Tim Vernum
+  1999 Jason Gilbert.
+
+The jboss integration module contains some LGPL code.
+
+ActiveMQ :: All JAR bundle
+Copyright 2005-2014 The Apache Software Foundation
+
+ActiveMQ :: Camel
+Copyright 2005-2014 The Apache Software Foundation
+
+ActiveMQ :: Pool
+Copyright 2005-2014 The Apache Software Foundation
+
+ActiveMQ :: Shiro
+Copyright 2005-2014 The Apache Software Foundation
+
+ActiveMQ :: Generic JMS Pool
+Copyright 2005-2014 The Apache Software Foundation
+
+Spring Framework 3.2.8.RELEASE
+Copyright (c) 2002-2014 Pivotal, Inc.
+
+ActiveMQ :: Runtime Configuration
+Copyright 2005-2014 The Apache Software Foundation
+
+ActiveMQ :: Apache Karaf
+Copyright 2005-2014 The Apache Software Foundation
+
+Apache Felix OSGi Bundle Repository
+Copyright 2008 The Apache Software Foundation
+
+This product includes software developed at
+The OSGi Alliance (http://www.osgi.org/).
+Copyright (c) OSGi Alliance (2000, 2007).
+Licensed under the Apache License 2.0.
+
+This product includes software from http://kxml.sourceforge.net.
+Copyright (c) 2002,2003, Stefan Haustein, Oberhausen, Rhld., Germany.
+Licensed under BSD License.
+
+This product uses software developed at
+The OSGi Alliance (http://www.osgi.org/).
+Copyright (c) OSGi Alliance (2000, 2007).
+Licensed under the Apache License 2.0.
+
+III. License Summary
+- Apache License 2.0
+- BSD License
+
+OSGi Bundle Repository Classes
+Copyright 2006-2008 The OSGi Alliance
+
+This product includes software developed at
+The OSGi Alliance (http://www.osgi.org/).
+Copyright 2006-2008 The OSGi Alliance.
+Licensed under the Apache License 2.0.
+
+This product uses software developed at
+The OSGi Alliance (http://www.osgi.org/).
+Copyright 2006-2008 The OSGi Alliance.
+Licensed under the Apache License 2.0.
+
+III. License Summary
+- Apache License 2.0
+
+OSGi Core Classes
+Copyright 2006 OSGi Alliance
+
+This product includes software developed at
+the OSGi Alliance (http://www.osgi.org/).
+
+Apache Felix Shell Service
+Copyright 2006-2008 The Apache Software Foundation
+
+ActiveMQ :: Log4j Appender
+Copyright 2005-2014 The Apache Software Foundation
+
+ActiveIO :: Core
+Copyright 2005-2012 The Apache Software Foundation
+
+Apache WebServices - XmlSchema
+Copyright 2004-2014 The Apache Software Foundation
+
+Portions Copyright 2006 International Business Machines Corp.
+
+Portions Copyright (C) World Wide Web Consortium 2006, 2007 and licensed under the 
+three-part BSD license.
+
+This product uses software developed at
+AOP Alliance (http://aopalliance.sourceforge.net/).
+Licensed under the Public Domain.
+
+Apache XBean :: Classloader
+Copyright 2005-2013 The Apache Software Foundation
+
+Apache XBean :: ASM 4 shaded (repackaged)
+Copyright 2005-2013 The Apache Software Foundation
+
+Apache XBean :: Spring
+Copyright 2005-2013 The Apache Software Foundation
+
+Apache XBean OSGI Bundle Utilities
+Copyright 2005-2013 The Apache Software Foundation
+
+Apache XBean :: Reflect
+Copyright 2005-2013 The Apache Software Foundation
+
+Apache XBean :: Finder shaded (repackaged)
+Copyright 2005-2013 The Apache Software Foundation
+
+Apache MINA SSHD
+Copyright 2008-2014 The Apache Software Foundation
+
+Annotation 1.1
+Copyright 2003-2010 The Apache Software Foundation
+
+Java Authentication SPI for Containers
+Copyright 2003-2010 The Apache Software Foundation
+
+Servlet 3.0
+Copyright 2003-2010 The Apache Software Foundation
+
+This product includes software developed by
+The W3C Consortium (http://www.w3.org/).
+
+Copyright © 1994-2002 World Wide Web Consortium, 
+(Massachusetts Institute of Technology, Institut National 
+de Recherche en Informatique et en Automatique, Keio 
+University). All Rights Reserved. 
+http://www.w3.org/Consortium/Legal/
+
+Apache Geronimo OSGI factory registry
+Copyright 2003-2011 The Apache Software Foundation
+
+Apache Aries Blueprint API
+Copyright 2009-2014 The Apache Software Foundation
+
+Apache Aries Blueprint Core
+Copyright 2009-2014 The Apache Software Foundation
+
+Apache Aries Quiesce API
+Copyright 2009-2012 The Apache Software Foundation
+
+Apache Aries Blueprint CM
+Copyright 2009-2014 The Apache Software Foundation
+
+Apache Aries Proxy Service
+Copyright 2009-2014 The Apache Software Foundation
+
+Apache Aries Proxy API
+Copyright 2009-2014 The Apache Software Foundation
+
+Apache Aries Transaction Manager
+Copyright 2009-2012 The Apache Software Foundation
+
+Apache Aries JMX API
+Copyright 2009-2014 The Apache Software Foundation
+
+Apache Aries JMX Blueprint API
+Copyright 2009-2013 The Apache Software Foundation
+
+Apache Aries JMX Blueprint Core
+Copyright 2009-2013 The Apache Software Foundation
+
+Apache Aries JMX Core
+Copyright 2009-2014 The Apache Software Foundation
+
+Apache Aries Util
+Copyright 2009-2013 The Apache Software Foundation
+
+Apache Felix Declarative Services
+Copyright 2006-2014 The Apache Software Foundation
+
+This product includes software developed at
+The OSGi Alliance (http://www.osgi.org/).
+Copyright (c) OSGi Alliance (2000, 2009).
+Licensed under the Apache License 2.0. 
+
+Apache Felix EventAdmin
+Copyright 2006-2012 The Apache Software Foundation
+
+Apache Felix Gogo Runtime
+Copyright 2011 The Apache Software Foundation
+
+This product includes software developed at
+The OSGi Alliance (http://www.osgi.org/).
+Copyright (c) OSGi Alliance (2000, 2009).
+Licensed under the Apache License 2.0.
+
+Apache Felix File Install
+Copyright 2006-2014 The Apache Software Foundation
+
+Apache Felix Metatype Service
+Copyright 2006-2014 The Apache Software Foundation
+
+This product includes software developed at
+The OSGi Alliance (http://www.osgi.org/).
+Copyright (c) OSGi Alliance (2000, 2012).
+Licensed under the Apache License 2.0. 
+
+Apache Felix Configuration Admin Service
+Copyright 2006-2012 The Apache Software Foundation
+
+Camel :: Blueprint
+Copyright 2007-2014 The Apache Software Foundation
+
+   =========================================================================
+   ==  NOTICE file corresponding to the section 4 d of                    ==
+   ==  the Apache License, Version 2.0,                                   ==
+   ==  in this case for the Apache Camel distribution.                    ==
+   =========================================================================
+
+   Please read the different LICENSE files present in the licenses directory of
+   this distribution.
+
+Camel :: Core XML
+Copyright 2007-2014 The Apache Software Foundation
+
+Camel :: Core OSGi
+Copyright 2007-2014 The Apache Software Foundation
+
+Camel :: MVEL
+Copyright 2007-2014 The Apache Software Foundation
+
+Camel :: Platforms :: Apache Karaf :: Commands
+Copyright 2007-2014 The Apache Software Foundation
+
+Camel :: Core
+Copyright 2007-2014 The Apache Software Foundation
+
+Camel :: Spring
+Copyright 2007-2014 The Apache Software Foundation
+
+   ==================================================================================
+   == NOTICE file corresponding to section 4 d of the Apache License, Version 2.0, == 
+   == in this case for the Spring Dynamic Modules / Spring OSGi distribution.      ==
+   ==================================================================================
+
+   This product includes software developed by
+   the Apache Software Foundation (http://www.apache.org).
+
+   The end-user documentation included with a redistribution, if any,
+   must include the following acknowledgement:
+
+     "This product includes software developed by the Spring Framework
+      Project (http://www.springsource.org)."
+
+   Alternatively, this acknowledgement may appear in the software itself,
+   if and wherever such third-party acknowledgements normally appear.
+
+   The names "Spring" and "Spring Framework" must not be used to
+   endorse or promote products derived from this software without
+   prior written permission. For written permission, please contact
+   enquiries@springsource.com.
+
+This product currently only contains code developed by authors
+of specific components, as identified by the source code files.
+
+Since product implements StAX API, it has dependencies to StAX API
+classes.
+
+Apache Commons CLI
+Copyright 2001-2009 The Apache Software Foundation
 
 Pax Web
 Copyright 2007-2009 Open Participation for Java (www.ops4j.org)
@@ -664,251 +1199,6 @@ This product includes software developed at
 Mort Bay Consulting Pty. Ltd. (http://www.mortbay.org/jetty).
 Copyright 2000-2009 Mort Bay Consulting Pty. Ltd.
 Licensed under the Apache License 2.0.
-
-This product currently only contains code developed by authors
-of specific components, as identified by the source code files.
-
-Since product implements StAX API, it has dependencies to StAX API
-classes.
-
-For additional credits (generally to people who reported problems)
-see CREDITS file.
-
-Apache Commons CLI
-Copyright 2001-2009 The Apache Software Foundation
-
-Java Authentication SPI for Containers
-Copyright 2003-2009 The Apache Software Foundation
-
-Activation 1.1
-Copyright 2003-2007 The Apache Software Foundation
-
-   ==================================================================================
-   == NOTICE file corresponding to section 4 d of the Apache License, Version 2.0, == 
-   == in this case for the Spring Dynamic Modules / Spring OSGi distribution.      ==
-   ==================================================================================
-
-   This product includes software developed by
-   the Apache Software Foundation (http://www.apache.org).
-
-   The end-user documentation included with a redistribution, if any,
-   must include the following acknowledgement:
-
-     "This product includes software developed by the Spring Framework
-      Project (http://www.springsource.org)."
-
-   Alternatively, this acknowledgement may appear in the software itself,
-   if and wherever such third-party acknowledgements normally appear.
-
-   The names "Spring" and "Spring Framework" must not be used to
-   endorse or promote products derived from this software without
-   prior written permission. For written permission, please contact
-   enquiries@springsource.com.
-
-JavaMail 1.4
-Copyright 2003-2010 The Apache Software Foundation
-
-Apache Felix Gogo Runtime
-Copyright 2011 The Apache Software Foundation
-
-This product includes software developed at
-The OSGi Alliance (http://www.osgi.org/).
-Copyright (c) OSGi Alliance (2000, 2009).
-Licensed under the Apache License 2.0.
-
-Apache Felix Metatype Service
-Copyright 2006-2013 The Apache Software Foundation
-
-This product includes software developed at
-The OSGi Alliance (http://www.osgi.org/).
-Copyright (c) OSGi Alliance (2000, 2012).
-Licensed under the Apache License 2.0. 
-
-Apache ServiceMix :: Bundles :: spring-beans
-Copyright 2005-2014 The Apache Software Foundation
-
-Apache ServiceMix
-Copyright 2005-2012 The Apache Software Foundation
-
-Apache ServiceMix :: Bundles :: spring-context
-Copyright 2005-2014 The Apache Software Foundation
-
-Apache ServiceMix :: Bundles :: spring-core
-Copyright 2005-2014 The Apache Software Foundation
-
-Apache ServiceMix :: Bundles :: spring-context-support
-Copyright 2005-2014 The Apache Software Foundation
-
-Apache ServiceMix
-Copyright 2005-2011 The Apache Software Foundation
-
-Streaming API for XML (STAX API 1.0)
-Copyright 2003-2007 The Apache Software Foundation
-
-Apache ServiceMix :: Bundles :: wsdl4j
-Copyright 2005-2013 The Apache Software Foundation
-
-Apache ServiceMix :: Bundles :: jasypt
-Copyright 2005-2013 The Apache Software Foundation
-
-Apache ServiceMix :: Bundles :: spring-tx
-Copyright 2005-2014 The Apache Software Foundation
-
-Apache ServiceMix :: Bundles :: jsch
-Copyright 2005-2012 The Apache Software Foundation
-
-Apache ServiceMix :: Bundles :: spring-aop
-Copyright 2005-2014 The Apache Software Foundation
-
-Apache ServiceMix :: Bundles :: spring-expression
-Copyright 2005-2014 The Apache Software Foundation
-
-Apache ServiceMix :: Bundles :: FastInfoset
-Copyright 2005-2013 The Apache Software Foundation
-
-Apache ServiceMix
-Copyright 2007-2012 The Apache Software Foundation
-
-Apache Geronimo 
-Copyright 2003-2006 The Apache Software Foundation
-
-Apache Geronimo OSGI factory registry
-Copyright 2003-2011 The Apache Software Foundation
-
-Java Authentication SPI for Containers
-Copyright 2003-2010 The Apache Software Foundation
-
-Servlet 3.0
-Copyright 2003-2010 The Apache Software Foundation
-
-This product includes software developed by
-The W3C Consortium (http://www.w3.org/).
-
-Copyright © 1994-2002 World Wide Web Consortium, 
-(Massachusetts Institute of Technology, Institut National 
-de Recherche en Informatique et en Automatique, Keio 
-University). All Rights Reserved. 
-http://www.w3.org/Consortium/Legal/
-
-Annotation 1.1
-Copyright 2003-2010 The Apache Software Foundation
-
-Apache MINA SSHD
-Copyright 2008-2013 The Apache Software Foundation
-
-Apache MINA Core
-Copyright 2004-2012 Apache MINA Project
-
-Apache XBean :: Reflect
-Copyright 2005-2013 The Apache Software Foundation
-
-Apache XBean :: Finder shaded (repackaged)
-Copyright 2005-2013 The Apache Software Foundation
-
-Apache XBean OSGI Bundle Utilities
-Copyright 2005-2013 The Apache Software Foundation
-
-Apache XBean :: ASM 4 shaded (repackaged)
-Copyright 2005-2013 The Apache Software Foundation
-
-Camel :: Blueprint
-Copyright 2007-2014 The Apache Software Foundation
-
-   =========================================================================
-   ==  NOTICE file corresponding to the section 4 d of                    ==
-   ==  the Apache License, Version 2.0,                                   ==
-   ==  in this case for the Apache Camel distribution.                    ==
-   =========================================================================
-
-   This product includes software developed by
-   The Apache Software Foundation (http://www.apache.org/).
-
-   Please read the different LICENSE files present in the licenses directory of
-   this distribution.
-
-Camel :: Core XML
-Copyright 2007-2014 The Apache Software Foundation
-
-Camel :: Core OSGi
-Copyright 2007-2014 The Apache Software Foundation
-
-Camel :: Spring
-Copyright 2007-2014 The Apache Software Foundation
-
-Spring Framework 3.2.9.RELEASE
-Copyright (c) 2002-2014 Pivotal, Inc.
-
-This product is licensed to you under the Apache License, Version 2.0
-(the "License"). You may not use this product except in compliance with
-the License.
-
-This product may include a number of subcomponents with separate
-copyright notices and license terms. Your use of the source code for
-these subcomponents is subject to the terms and conditions of the
-subcomponent's license, as noted in the license.txt file.
-
-Camel :: MVEL
-Copyright 2007-2014 The Apache Software Foundation
-
-Camel :: Core
-Copyright 2007-2014 The Apache Software Foundation
-
-Camel :: Platforms :: Apache Karaf :: Commands
-Copyright 2007-2014 The Apache Software Foundation
-
-Apache WebServices - XmlSchema
-Copyright 2004-2014 The Apache Software Foundation
-
-Portions Copyright 2006 International Business Machines Corp.
-
-Portions Copyright (C) World Wide Web Consortium 2006, 2007 and licensed under the 
-three-part BSD license.
-
-Apache Karaf :: Shell :: Development Commands
-Copyright 2007-2014 FuseSource, Corp.
-
-Apache Felix OSGi Bundle Repository
-Copyright 2011 The Apache Software Foundation
-
-This product includes software from http://kxml.sourceforge.net.
-Copyright (c) 2002,2003, Stefan Haustein, Oberhausen, Rhld., Germany.
-Licensed under BSD License.
-
-Apache Aries JMX Core
-Copyright 2009-2013 The Apache Software Foundation
-
-This product includes software developed at
-the OSGi Alliance (http://www.osgi.org/).
-
-Apache Aries JMX Blueprint Core
-Copyright 2009-2013 The Apache Software Foundation
-
-Apache Aries JMX Blueprint API
-Copyright 2009-2013 The Apache Software Foundation
-
-Apache Aries JMX API
-Copyright 2009-2013 The Apache Software Foundation
-
-Apache Aries Proxy Service
-Copyright 2009-2013 The Apache Software Foundation
-
-Apache Aries Proxy API
-Copyright 2009-2012 The Apache Software Foundation
-
-Apache Aries Blueprint CM
-Copyright 2009-2013 The Apache Software Foundation
-
-Apache Aries Blueprint Core
-Copyright 2009-2013 The Apache Software Foundation
-
-Apache Aries Quiesce API
-Copyright 2009-2012 The Apache Software Foundation
-
-Apache Aries Blueprint API
-Copyright 2009-2012 The Apache Software Foundation
-
-Apache Aries Util
-Copyright 2009-2013 The Apache Software Foundation
 
 Apache Commons Lang
 Copyright 2001-2011 The Apache Software Foundation

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.0.0" localization="OSGI-INF/metatype/io.fabric8.container.process.ZooKeeperPublishConfig">
+    <OCD id="io.fabric8.zookeeper.publish" name="%io.fabric8.zookeeper.publish.name" description="%io.fabric8.zookeeper.publish.description">
+        <AD id="path" type="String" name="%io.fabric8.zookeeper.publish.path.name" description="%io.fabric8.zookeeper.publish.path.description"/>
+        <AD id="publishValue" type="String" name="%io.fabric8.zookeeper.publish.publishValue.name" description="%io.fabric8.zookeeper.publish.publishValue.description"/>
+        <AD id="exportEnvironmentName" type="String" name="%io.fabric8.zookeeper.publish.exportEnvironmentName.name" description="%io.fabric8.zookeeper.publish.exportEnvironmentName.description"/>
+        <AD id="exportValue" type="String" name="%io.fabric8.zookeeper.publish.exportValue.name" description="%io.fabric8.zookeeper.publish.exportValue.description"/>
+        <AD id="createMode" type="String" name="%io.fabric8.zookeeper.publish.createMode.name" description="%io.fabric8.zookeeper.publish.createMode.description">
+            <Option value="Ephemeral" label="EPHEMERAL"/>
+            <Option value="Ephemeral Sequential" label="EPHEMERAL_SEQUENTIAL"/>
+            <Option value="Persistent" label="PERSISTENT"/>
+            <Option value="Persistent Sequential" label="PERSISTENT_SEQUENTIAL"/>
+        </AD>
+    </OCD>
+    <Designate pid="io.fabric8.zookeeper.publish">
+        <Object ocdref="io.fabric8.zookeeper.publish"/>
+    </Designate>
+</metatype:MetaData>

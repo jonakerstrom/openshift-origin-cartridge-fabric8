@@ -39,14 +39,6 @@ if [ "x$JAVA_MAX_MEM" = "x" ]; then
     JAVA_MAX_MEM=512M
     export JAVA_MAX_MEM
 fi
-if [ "x$JAVA_PERM_MEM" = "x" ]; then
-    JAVA_PERM_MEM=16M
-    export JAVA_PERM_MEM
-fi
-if [ "x$JAVA_MAX_PERM_MEM" = "x" ]; then
-    JAVA_MAX_PERM_MEM=128M
-    export JAVA_MAX_PERM_MEM
-fi
 
 warn() {
     echo "${PROGNAME}: $*"
@@ -120,7 +112,7 @@ locateHome() {
     # In POSIX shells, CDPATH may cause cd to write to stdout
     (unset CDPATH) >/dev/null 2>&1 && unset CDPATH
 
-    KARAF_HOME=`cd $DIRNAME/..; pwd`
+    KARAF_HOME=`cd "$DIRNAME/.."; pwd`
     if [ ! -d "$KARAF_HOME" ]; then
         die "KARAF_HOME is not valid: $KARAF_HOME"
     fi
@@ -196,7 +188,7 @@ locateJava() {
     fi
 
     if [ "x$JAVA_HOME" = "x" ] && [ "$darwin" = "true" ]; then
-        JAVA_HOME="$(/usr/libexec/java_home)"
+        JAVA_HOME="$(/usr/libexec/java_home -v 1.7)"
     fi
     if [ "x$JAVA" = "x" ] && [ -r /etc/gentoo-release ] ; then
         JAVA_HOME=`java-config --jre-home`
@@ -242,6 +234,10 @@ setupDebugOptions() {
     fi
     export JAVA_OPTS
 
+    if [ "x$EXTRA_JAVA_OPTS" != "x" ]; then
+        JAVA_OPTS="$EXTRA_JAVA_OPTS $JAVA_OPTS"
+    fi
+
     # Set Debug options if enabled
     if [ "x$KARAF_DEBUG" != "x" ]; then
         # Use the defaults if JAVA_DEBUG_OPTS was not set
@@ -280,7 +276,7 @@ setupDefaults() {
     fi
 
     # Add the jars in the lib dir
-    for file in $KARAF_HOME/lib/*.jar
+    for file in "$KARAF_HOME"/lib/*.jar
     do
         if [ -z "$CLASSPATH" ]; then
             CLASSPATH="$file"
@@ -335,7 +331,7 @@ init() {
 
 run() {
 
-    CLASSPATH="${KARAF_HOME}/system/org/apache/karaf/admin/org.apache.karaf.admin.command/2.3.0.redhat-610379/org.apache.karaf.admin.command-2.3.0.redhat-610379.jar:${KARAF_HOME}/system/org/apache/karaf/admin/org.apache.karaf.admin.core/2.3.0.redhat-610379/org.apache.karaf.admin.core-2.3.0.redhat-610379.jar:${KARAF_HOME}/system/org/apache/karaf/shell/org.apache.karaf.shell.console/2.3.0.redhat-610379/org.apache.karaf.shell.console-2.3.0.redhat-610379.jar:${KARAF_HOME}/system/org/apache/felix/org.apache.felix.gogo.runtime/0.11.0.redhat-610379/org.apache.felix.gogo.runtime-0.11.0.redhat-610379.jar:${KARAF_HOME}/system/org/apache/aries/blueprint/org.apache.aries.blueprint.api/1.0.1.redhat-610379/org.apache.aries.blueprint.api-1.0.1.redhat-610379.jar:${KARAF_HOME}/system/org/apache/aries/blueprint/org.apache.aries.blueprint.core/1.0.1.redhat-610-SNAPSHOT/org.apache.aries.blueprint.core-1.0.1.redhat-610-SNAPSHOT.jar:${KARAF_HOME}/system/org/apache/aries/blueprint/org.apache.aries.blueprint.cm/1.0.1.redhat-610-SNAPSHOT/org.apache.aries.blueprint.cm-1.0.1.redhat-610-SNAPSHOT.jar:${KARAF_HOME}/system/org/ops4j/pax/logging/pax-logging-api/1.7.2/pax-logging-api-1.7.2.jar:${KARAF_HOME}/system/org/apache/felix/org.apache.felix.framework/4.0.3.redhat-610379/org.apache.felix.framework-4.0.3.redhat-610379.jar"
+    CLASSPATH="${KARAF_HOME}/system/org/apache/karaf/admin/org.apache.karaf.admin.command/2.4.0.redhat-620004/org.apache.karaf.admin.command-2.4.0.redhat-620004.jar:${KARAF_HOME}/system/org/apache/karaf/admin/org.apache.karaf.admin.core/2.4.0.redhat-620004/org.apache.karaf.admin.core-2.4.0.redhat-620004.jar:${KARAF_HOME}/system/org/apache/karaf/shell/org.apache.karaf.shell.console/2.4.0.redhat-620004/org.apache.karaf.shell.console-2.4.0.redhat-620004.jar:${KARAF_HOME}/system/org/apache/felix/org.apache.felix.gogo.runtime/0.12.1/org.apache.felix.gogo.runtime-0.12.1.jar:${KARAF_HOME}/system/org/apache/aries/blueprint/org.apache.aries.blueprint.api/1.0.1/org.apache.aries.blueprint.api-1.0.1.jar:${KARAF_HOME}/system/org/apache/aries/blueprint/org.apache.aries.blueprint.core/1.4.1/org.apache.aries.blueprint.core-1.4.1.jar:${KARAF_HOME}/system/org/apache/aries/blueprint/org.apache.aries.blueprint.cm/1.0.4/org.apache.aries.blueprint.cm-1.0.4.jar:${KARAF_HOME}/system/org/ops4j/pax/logging/pax-logging-api/1.7.3/pax-logging-api-1.7.3.jar:${KARAF_HOME}/system/org/apache/felix/org.apache.felix.framework/4.4.1/org.apache.felix.framework-4.4.1.jar"
 
     if $cygwin; then
         KARAF_HOME=`cygpath --path --windows "$KARAF_HOME"`

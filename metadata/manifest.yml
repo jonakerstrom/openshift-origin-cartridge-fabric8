@@ -91,7 +91,7 @@ Endpoints:
     Private-Port:      3128
     Public-Port-Name:  ZOOKEEPER_PROXY_PORT
     Options:           { "ssl_to_gear": true }
- - Private-IP-Name:   IP
+  - Private-IP-Name:   IP
     Private-Port-Name: AMQP_PORT
     Private-Port:      4447
     Public-Port-Name:  AMQP_PROXY_PORT

@@ -480,8 +480,8 @@ the Fabric8.
 
 #### Reading Spring properties from the Process Registry
 
-After you add `process-spring-boot-registry` jar to its classpath, `ProcessRegistry` will be used to resolve Spring
-properties. 
+After you add `process-spring-boot-registry` jar to the classpath of your application, `ProcessRegistry` will be used to 
+resolve Spring properties. 
 
     @Value("service.invoicing.url")
     String host;
@@ -489,3 +489,64 @@ properties.
 `ProcessRegistry` will be attempted to be read before regular Spring property sources (for example before the 
 `application.properties` file). If the desired value will not be found in the process registry, Spring will fallback
 to the other property sources.
+
+#### Injecting process registry
+
+In order to use the Process Registry API directly, you can inject `ProcessRegistry` into your Spring managed beans.
+
+    private final ProcessRegistry processRegistry;
+    
+    @Autowired
+    public MyBean(ProcessRegistry processRegistry) {
+        this.processRegistry = processRegistry;
+    }
+    
+    ...
+    
+    String invoicingServiceUrl = processRegistry.readProperty("service.invoicing.url");
+    Invoice invoice = new RestTemplate().getForObject(invoicingServiceUrl + "/" + 1, Invoice.class);
+
+#### Global access to the process registry
+
+If for some reasons you can't inject `ProcessRegistry` into your Spring managed beans, you can access global registry 
+instance initialized per Spring Boot JVM using static `ProcessRegistryHolder#processRegistry()` method.
+
+    ProcessRegistry processRegistry = ProcessRegistryHolder.processRegistry();
+    String invoicingServiceUrl = processRegistry.readProperty("service.invoicing.url");
+    Invoice invoice = new RestTemplate().getForObject(invoicingServiceUrl + "/" + 1, Invoice.class);
+
+#### Composite process registry
+
+The default type of the registry used by the Spring Boot container is the `CompositeProcessRegistry`. This is kind of the 
+proxy implementation of the registry delegating properties resolution to the list of the *real* registries.
+
+Composite registry will try to resolve given property using the first aggregated registry. If it won't find the property
+there, it will fallback to the next registry in the list. If none of the registry in the aggregated list contains the
+desired property, the composite resolver returns `null`.
+
+By default the following process registries are aggregated by the Spring Boot container:
+
+ * `ZooKeeperProcessRegistry` (if `curator-framework` jar is present in the classpath)
+ * `ClassPathProcessRegistry`
+ * `InMemoryProcessRegistry`
+
+The above basically means that Spring Boot container attempts to read properties from the Fabric8 ZooKeeper registry,
+then from the system properties and finally from the files located in the classpath.
+
+#### ZooKeeper process registry
+
+If `curator-framework` jar is present in the classpath, `ZooKeeperProcessRegistry` will be created. 
+`ZooKeeperProcessRegistry` attempts to read properties values from the ZooKeeper server.
+
+In particular ZooKeeper registry will try to connect to the Fabric8 ZooKeeper runtime registry and read properties 
+from it. The default coordinates of Fabric8 runtime registry are `localhost:2181` (2181 is the default port used by the
+Fabric8 to start ZooKeeper on). If you would like to change it, set `fabric8.process.registry.zk.hosts`
+system property to the customized list of hosts:
+
+    java -Dfabric8.process.registry.zk.hosts=host1:5555,host2:6666 -jar my-service.jar
+
+ZooKeeper registry interprets dots in the properties names as the slashes in ZNode paths. For example `foo.bar` property 
+will be resolved as the `foo/bar` ZNode path.
+
+    @Value("${foo.bar}") // try to read foo/bar ZNode from the ZooKeeper
+    String bar;

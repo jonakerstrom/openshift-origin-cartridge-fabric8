@@ -44,12 +44,6 @@ if "%JAVA_MIN_MEM%" == "" (
 if "%JAVA_MAX_MEM%" == "" (
     set JAVA_MAX_MEM=512M
 )
-if "%JAVA_PERM_MEM%" == "" (
-    set JAVA_PERM_MEM=16M
-)
-if "%JAVA_MAX_PERM_MEM%" == "" (
-    set JAVA_MAX_PERM_MEM=128M
-)
 
 goto BEGIN
 
@@ -101,7 +95,7 @@ if "%KARAF_ETC%" == "" (
 )
 
 set LOCAL_CLASSPATH=%CLASSPATH%
-set DEFAULT_JAVA_OPTS=-server -Xms%JAVA_MIN_MEM% -Xmx%JAVA_MAX_MEM% -Dderby.system.home="%KARAF_DATA%\derby" -Dderby.storage.fileSyncTransactionLog=true -Dcom.sun.management.jmxremote -XX:+UnlockDiagnosticVMOptions -XX:+UnsyncloadClass
+set JAVA_MODE=-server
 
 rem Check some easily accessible MIN/MAX params for JVM mem usage
 if not "%JAVA_PERM_MEM%" == "" (
@@ -160,18 +154,15 @@ if not "%JAVA%" == "" goto :Check_JAVA_END
 :TryJDK
     start /w regedit /e __reg1.txt "HKEY_LOCAL_MACHINE\SOFTWARE\JavaSoft\Java Development Kit"
     if not exist __reg1.txt (
-        call :warn Unable to retrieve JAVA_HOME
-        goto END
+        goto TryRegJRE
     )
     type __reg1.txt | find "CurrentVersion" > __reg2.txt
     if errorlevel 1 (
-        call :warn Unable to retrieve JAVA_HOME
-        goto END
+        goto TryRegJRE
     )
     for /f "tokens=2 delims==" %%x in (__reg2.txt) do set JavaTemp=%%~x
     if errorlevel 1 (
-        call :warn Unable to retrieve JAVA_HOME
-        goto END
+        goto TryRegJRE
     )
     set JavaTemp=%JavaTemp%##
     set JavaTemp=%JavaTemp:                ##=##%
@@ -184,21 +175,43 @@ if not "%JAVA%" == "" goto :Check_JAVA_END
     del __reg2.txt
     start /w regedit /e __reg1.txt "HKEY_LOCAL_MACHINE\SOFTWARE\JavaSoft\Java Development Kit\%JavaTemp%"
     if not exist __reg1.txt (
-        call :warn Unable to retrieve JAVA_HOME from JDK
-        goto END
+        goto TryRegJRE
     )
     type __reg1.txt | find "JavaHome" > __reg2.txt
     if errorlevel 1 (
-        call :warn Unable to retrieve JAVA_HOME
-        goto END
+        goto TryRegJRE
     )
     for /f "tokens=2 delims==" %%x in (__reg2.txt) do set JAVA_HOME=%%~x
     if errorlevel 1 (
-        call :warn Unable to retrieve JAVA_HOME
-        goto END
+        goto TryRegJRE
     )
     del __reg1.txt
     del __reg2.txt
+:TryRegJRE
+    rem try getting the JAVA_HOME from registry
+    FOR /F "usebackq tokens=3*" %%A IN (`REG QUERY "HKLM\Software\JavaSoft\Java Runtime Environment" /v CurrentVersion`) DO (
+       set JAVA_VERSION=%%A
+    )
+    FOR /F "usebackq tokens=3*" %%A IN (`REG QUERY "HKLM\Software\JavaSoft\Java Runtime Environment\%JAVA_VERSION%" /v JavaHome`) DO (
+       set JAVA_HOME=%%A %%B
+    )
+    if not exist "%JAVA_HOME%" (
+       goto TryRegJDK
+	)
+	goto TryJDKEnd
+:TryRegJDK
+    rem try getting the JAVA_HOME from registry
+    FOR /F "usebackq tokens=3*" %%A IN (`REG QUERY "HKLM\Software\JavaSoft\Java Development Kit" /v CurrentVersion`) DO (
+       set JAVA_VERSION=%%A
+    )
+    FOR /F "usebackq tokens=3*" %%A IN (`REG QUERY "HKLM\Software\JavaSoft\Java Development Kit\%JAVA_VERSION%" /v JavaHome`) DO (
+       set JAVA_HOME=%%A %%B
+    )
+    if not exist "%JAVA_HOME%" (
+       call :warn Unable to retrieve JAVA_HOME from Registry
+    )
+	goto TryJDKEnd
+
 :TryJDKEnd
     if not exist "%JAVA_HOME%" (
         call :warn JAVA_HOME is not valid: "%JAVA_HOME%"
@@ -207,7 +220,21 @@ if not "%JAVA%" == "" goto :Check_JAVA_END
     set JAVA=%JAVA_HOME%\bin\java
 :Check_JAVA_END
 
+if not exist "%JAVA_HOME%\bin\server\jvm.dll" (
+    if not exist "%JAVA_HOME%\jre\bin\server\jvm.dll" (
+        echo WARNING: Running Karaf on a Java HotSpot Client VM because server-mode is not available.
+        echo Install Java Developer Kit to fix this.
+        echo For more details see http://java.sun.com/products/hotspot/whitepaper.html#client
+        set JAVA_MODE=-client
+    )
+)
+set DEFAULT_JAVA_OPTS=%JAVA_MODE% -Xms%JAVA_MIN_MEM% -Xmx%JAVA_MAX_MEM% -Dderby.system.home="%KARAF_DATA%\derby" -Dderby.storage.fileSyncTransactionLog=true -Dcom.sun.management.jmxremote -XX:+UnlockDiagnosticVMOptions -XX:+UnsyncloadClass
+
 if "%JAVA_OPTS%" == "" set JAVA_OPTS=%DEFAULT_JAVA_OPTS%
+
+if "%EXTRA_JAVA_OPTS%" == "" goto :KARAF_EXTRA_JAVA_OPTS_END
+    set JAVA_OPTS="%EXTRA_JAVA_OPTS% %JAVA_OPTS%"
+:KARAF_EXTRA_JAVA_OPTS_END
 
 if "%KARAF_DEBUG%" == "" goto :KARAF_DEBUG_END
     if "%1" == "stop" goto :KARAF_DEBUG_END
@@ -215,7 +242,7 @@ if "%KARAF_DEBUG%" == "" goto :KARAF_DEBUG_END
     rem Use the defaults if JAVA_DEBUG_OPTS was not set
     if "%JAVA_DEBUG_OPTS%" == "" set JAVA_DEBUG_OPTS=%DEFAULT_JAVA_DEBUG_OPTS%
 
-    set "JAVA_OPTS=%JAVA_DEBUG_OPTS% %JAVA_OPTS%"
+    set JAVA_OPTS="%JAVA_DEBUG_OPTS% %JAVA_OPTS%"
     call :warn Enabling Java debug options: %JAVA_DEBUG_OPTS%
 :KARAF_DEBUG_END
 
@@ -301,7 +328,7 @@ if "%KARAF_PROFILER%" == "" goto :RUN
     SET ARGS=%1 %2 %3 %4 %5 %6 %7 %8
     rem Execute the Java Virtual Machine
     cd %KARAF_BASE%
-    "%JAVA%" %JAVA_OPTS% %OPTS% -classpath "%CLASSPATH%" -Djava.endorsed.dirs="%JAVA_HOME%\jre\lib\endorsed;%JAVA_HOME%\lib\endorsed;%KARAF_HOME%\lib\endorsed" -Djava.ext.dirs="%JAVA_HOME%\jre\lib\ext;%JAVA_HOME%\lib\ext;%KARAF_HOME%\lib\ext" -Dkaraf.instances="%KARAF_HOME%\instances" -Dkaraf.home="%KARAF_HOME%" -Dkaraf.base="%KARAF_BASE%" -Djava.io.tmpdir="%KARAF_DATA%\tmp" -Dkaraf.data="%KARAF_DATA%" -Dkaraf.etc="%KARAF_ETC%" -Djava.util.logging.config.file="%KARAF_ETC%\java.util.logging.properties" %KARAF_OPTS% %MAIN% %ARGS%
+    "%JAVA%" %JAVA_OPTS% %OPTS% -classpath "%CLASSPATH%" -Djava.endorsed.dirs="%JAVA_HOME%\jre\lib\endorsed;%JAVA_HOME%\lib\endorsed;%KARAF_HOME%\lib\endorsed" -Djava.ext.dirs="%JAVA_HOME%\jre\lib\ext;%JAVA_HOME%\lib\ext;%KARAF_HOME%\lib\ext" -Dkaraf.instances="%KARAF_HOME%\instances" -Dkaraf.home="%KARAF_HOME%" -Dkaraf.base="%KARAF_BASE%" -Djava.io.tmpdir="%KARAF_DATA%\tmp" -Dkaraf.data="%KARAF_DATA%" -Dkaraf.etc="%KARAF_ETC%" -Djava.util.logging.config.file="%KARAF_ETC%\java.util.logging.properties" -Djavax.management.builder.initial=org.apache.karaf.management.boot.KarafMBeanServerBuilder %KARAF_OPTS% %MAIN% %ARGS%
 
 rem # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 

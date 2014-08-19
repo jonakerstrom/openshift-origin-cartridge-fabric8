@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.0.0" localization="OSGI-INF/metatype/io.fabric8.maven.impl.MavenProxyRegistrationHandler">
+    <OCD id="io.fabric8.maven" name="%io.fabric8.maven.name" description="%io.fabric8.maven.description">
+        <AD id="realm" type="String" default="karaf" name="%io.fabric8.maven.realm.name" description="%io.fabric8.maven.realm.description"/>
+        <AD id="role" type="String" default="admin" name="%io.fabric8.maven.role.name" description="%io.fabric8.maven.role.description"/>
+        <AD id="localRepository" type="String" name="%io.fabric8.maven.localRepository.name" description="%io.fabric8.maven.localRepository.description"/>
+        <AD id="remoteRepositories" type="String" name="%io.fabric8.maven.remoteRepositories.name" description="%io.fabric8.maven.remoteRepositories.description" cardinality="-1"/>
+        <AD id="appendSystemRepos" type="String" name="%io.fabric8.maven.appendSystemRepos.name" description="%io.fabric8.maven.appendSystemRepos.description"/>
+        <AD id="updatePolicy" type="String" default="always" name="%io.fabric8.maven.updatePolicy.name" description="%io.fabric8.maven.updatePolicy.description">
+            <Option value="Always" label="always"/>
+            <Option value="Daily" label="daily"/>
+            <Option value="Never" label="never"/>
+        </AD>
+        <AD id="checksumPolicy" type="String" default="warn" name="%io.fabric8.maven.checksumPolicy.name" description="%io.fabric8.maven.checksumPolicy.description">
+            <Option value="Ignore" label="ignore"/>
+            <Option value="Fail" label="fail"/>
+            <Option value="Warn" label="warn"/>
+        </AD>
+        <AD id="proxyProtocol" type="String" name="%io.fabric8.maven.proxyProtocol.name" description="%io.fabric8.maven.proxyProtocol.description"/>
+        <AD id="proxyHost" type="String" name="%io.fabric8.maven.proxyHost.name" description="%io.fabric8.maven.proxyHost.description"/>
+        <AD id="proxyPort" type="Integer" default="3128" name="%io.fabric8.maven.proxyPort.name" description="%io.fabric8.maven.proxyPort.description"/>
+        <AD id="proxyUsername" type="String" name="%io.fabric8.maven.proxyUsername.name" description="%io.fabric8.maven.proxyUsername.description"/>
+        <AD id="proxyPassword" type="String" name="%io.fabric8.maven.proxyPassword.name" description="%io.fabric8.maven.proxyPassword.description"/>
+        <AD id="nonProxyHosts" type="String" name="%io.fabric8.maven.nonProxyHosts.name" description="%io.fabric8.maven.nonProxyHosts.description"/>
+        <AD id="name" type="String" default="${runtime.id}" name="%io.fabric8.maven.name.name" description="%io.fabric8.maven.name.description"/>
+    </OCD>
+    <Designate pid="io.fabric8.maven">
+        <Object ocdref="io.fabric8.maven"/>
+    </Designate>
+</metatype:MetaData>

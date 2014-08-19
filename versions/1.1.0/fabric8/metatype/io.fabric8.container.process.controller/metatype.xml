@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.0.0" localization="OSGI-INF/metatype/io.fabric8.container.process.ProcessControllerFactoryService">
+    <OCD id="io.fabric8.container.process.controller" name="%io.fabric8.container.process.controller.name" description="%io.fabric8.container.process.controller.description">
+        <AD id="monitorPollTime" type="Long" default="1500" name="%io.fabric8.container.process.controller.monitorPollTime.name" description="%io.fabric8.container.process.controller.monitorPollTime.description"/>
+    </OCD>
+    <Designate pid="io.fabric8.container.process.controller">
+        <Object ocdref="io.fabric8.container.process.controller"/>
+    </Designate>
+</metatype:MetaData>

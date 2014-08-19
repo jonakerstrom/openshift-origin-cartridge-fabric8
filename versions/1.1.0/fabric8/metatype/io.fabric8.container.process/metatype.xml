@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.0.0" localization="OSGI-INF/metatype/io.fabric8.container.process.ProcessContainerConfig">
+    <OCD id="io.fabric8.container.process" name="%io.fabric8.container.process.name" description="%io.fabric8.container.process.description">
+        <AD id="processName" type="String" name="%io.fabric8.container.process.processName.name" description="%io.fabric8.container.process.processName.description"/>
+        <AD id="url" type="String" name="%io.fabric8.container.process.url.name" description="%io.fabric8.container.process.url.description" cardinality="1"/>
+        <AD id="extractCmd" type="String" default="tar\ zxf" name="%io.fabric8.container.process.extractCmd.name" description="%io.fabric8.container.process.extractCmd.description"/>
+        <AD id="postUnpackCmds" type="String" name="%io.fabric8.container.process.postUnpackCmds.name" description="%io.fabric8.container.process.postUnpackCmds.description" cardinality="2147483647"/>
+        <AD id="controllerPath" type="String" default="controller.json" name="%io.fabric8.container.process.controllerPath.name" description="%io.fabric8.container.process.controllerPath.description"/>
+        <AD id="overlayFolder" type="String" default="overlayFiles" name="%io.fabric8.container.process.overlayFolder.name" description="%io.fabric8.container.process.overlayFolder.description"/>
+        <AD id="postInstallCmds" type="String" name="%io.fabric8.container.process.postInstallCmds.name" description="%io.fabric8.container.process.postInstallCmds.description" cardinality="2147483647"/>
+        <AD id="disableDynamicPorts" type="String" name="%io.fabric8.container.process.disableDynamicPorts.name" description="%io.fabric8.container.process.disableDynamicPorts.description" cardinality="2147483647"/>
+        <AD id="createLocalContainerAddress" type="String" name="%io.fabric8.container.process.createLocalContainerAddress.name" description="%io.fabric8.container.process.createLocalContainerAddress.description"/>
+        <AD id="internalAgent" type="Boolean" default="false" name="%io.fabric8.container.process.internalAgent.name" description="%io.fabric8.container.process.internalAgent.description"/>
+    </OCD>
+    <Designate pid="io.fabric8.container.process">
+        <Object ocdref="io.fabric8.container.process"/>
+    </Designate>
+</metatype:MetaData>

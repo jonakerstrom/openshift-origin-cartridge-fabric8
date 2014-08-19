@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.0.0" localization="OSGI-INF/metatype/io.fabric8.container.process.JavaContainerConfig">
+    <OCD id="io.fabric8.container.java" name="%io.fabric8.container.java.name" description="%io.fabric8.container.java.description">
+        <AD id="jarUrl" type="String" name="%io.fabric8.container.java.jarUrl.name" description="%io.fabric8.container.java.jarUrl.description" cardinality="1"/>
+        <AD id="mainClass" type="String" name="%io.fabric8.container.java.mainClass.name" description="%io.fabric8.container.java.mainClass.description"/>
+        <AD id="arguments" type="String" name="%io.fabric8.container.java.arguments.name" description="%io.fabric8.container.java.arguments.description"/>
+        <AD id="javaAgent" type="String" name="%io.fabric8.container.java.javaAgent.name" description="%io.fabric8.container.java.javaAgent.description"/>
+        <AD id="jvmArguments" type="String" name="%io.fabric8.container.java.jvmArguments.name" description="%io.fabric8.container.java.jvmArguments.description"/>
+        <AD id="overlayFolder" type="String" default="overlayFiles" name="%io.fabric8.container.java.overlayFolder.name" description="%io.fabric8.container.java.overlayFolder.description"/>
+    </OCD>
+    <Designate pid="io.fabric8.container.java">
+        <Object ocdref="io.fabric8.container.java"/>
+    </Designate>
+</metatype:MetaData>

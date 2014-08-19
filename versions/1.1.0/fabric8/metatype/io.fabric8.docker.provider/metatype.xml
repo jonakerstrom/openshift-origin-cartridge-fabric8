@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.0.0" localization="OSGI-INF/metatype/io.fabric8.docker.provider.DockerProviderConfig">
+    <OCD id="io.fabric8.docker.provider" name="%io.fabric8.docker.provider.name" description="%io.fabric8.docker.provider.description">
+        <AD id="image" type="String" name="%io.fabric8.docker.provider.image.name" description="%io.fabric8.docker.provider.image.description"/>
+        <AD id="cmd" type="String" name="%io.fabric8.docker.provider.cmd.name" description="%io.fabric8.docker.provider.cmd.description"/>
+        <AD id="javaLibraryPath" type="String" name="%io.fabric8.docker.provider.javaLibraryPath.name" description="%io.fabric8.docker.provider.javaLibraryPath.description"/>
+        <AD id="homePath" type="String" name="%io.fabric8.docker.provider.homePath.name" description="%io.fabric8.docker.provider.homePath.description"/>
+        <AD id="imageRepository" type="String" name="%io.fabric8.docker.provider.imageRepository.name" description="%io.fabric8.docker.provider.imageRepository.description"/>
+        <AD id="imageEntryPoint" type="String" name="%io.fabric8.docker.provider.imageEntryPoint.name" description="%io.fabric8.docker.provider.imageEntryPoint.description"/>
+    </OCD>
+    <Designate pid="io.fabric8.docker.provider">
+        <Object ocdref="io.fabric8.docker.provider"/>
+    </Designate>
+</metatype:MetaData>

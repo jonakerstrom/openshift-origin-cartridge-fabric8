@@ -23,6 +23,15 @@ Cart-Data:
   - Key: OPENSHIFT_FABRIC8_LOG_DIR
     Type: environment
     Description: "Directory to store application log files."
+  - Key: FABRIC8_ZOOKEEPER_URL
+    Type: environment
+    Description: "The url to zookeeper."
+  - Key: FABRIC8_ZOOKEEPER_PASSWORD
+    Type: environment
+    Description: "The zookeeper password."
+  - Key: MAVEN_UPLOAD_URL
+    Type: environment
+    Description: "The url to the fabric maven proxy."
   - Key: OPENSHIFT_TMP_DIR
     Type: environment
     Description: "Directory to store application temporary files."
@@ -78,9 +87,37 @@ Endpoints:
         Backend:       ""
         Options:       { health: true }
   - Private-IP-Name:   IP
-    Private-Port-Name: AMQP_PORT
-    Private-Port:      4447
-    Public-Port-Name:  AMQP_PROXY_PORT
+    Private-Port-Name: SHUTDOWN_PORT
+    Private-Port:      15001
+  - Private-IP-Name:   IP
+    Private-Port-Name: SSH_PORT
+    Private-Port:      23101
+    Public-Port-Name:  SSH_PROXY_PORT
+    Options:           { "ssl_to_gear": true }
+  - Private-IP-Name:   IP
+    Private-Port-Name: RMI_SERVER_PORT
+    Private-Port:      44444
+  - Private-IP-Name:   IP
+    Private-Port-Name: RMI_REGISTRY_PORT
+    Private-Port:      16099
+  - Private-IP-Name:   IP
+    Private-Port-Name: ZOOKEEPER_PORT
+    Private-Port:      3128
+    Public-Port-Name:  ZOOKEEPER_PROXY_PORT
+    Options:           { "ssl_to_gear": true }
+  - Private-IP-Name:   IP
+    Private-Port-Name: AMQ_PORT
+    Private-Port:      31313
+    Public-Port-Name:  AMQ_PROXY_PORT
+    Options:           { "ssl_to_gear": true }
+  - Private-IP-Name:   IP
+    Private-Port-Name: AMQ_SSL_PORT
+    Private-Port:      31314
+    Public-Port-Name:  AMQ_SSL_PROXY_PORT
+    Protocols: [tls]
+    Mappings:
+    - Frontend: 'TLS_PORT_1'
+      Backend: ''
   - Private-IP-Name:   IP
     Private-Port-Name: OPENWIRE_PORT
     Private-Port:      5445

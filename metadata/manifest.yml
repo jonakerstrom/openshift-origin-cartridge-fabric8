@@ -23,9 +23,6 @@ Cart-Data:
   - Key: OPENSHIFT_FABRIC8_LOG_DIR
     Type: environment
     Description: "Directory to store application log files."
-  - Key: MAVEN_UPLOAD_URL
-    Type: environment
-    Description: "The url to the fabric maven proxy."
   - Key: OPENSHIFT_TMP_DIR
     Type: environment
     Description: "Directory to store application temporary files."

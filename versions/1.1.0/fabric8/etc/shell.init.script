@@ -124,8 +124,7 @@ enable-3x-aliases = {
 
     echo "Karaf 3.x aliases enabled"
 
-}
-//
+}//
 //  Copyright 2005-2014 Red Hat, Inc.
 //
 //  Red Hat licenses this file to you under the Apache License, version

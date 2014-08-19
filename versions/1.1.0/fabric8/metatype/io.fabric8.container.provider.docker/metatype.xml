@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.0.0" localization="OSGI-INF/metatype/io.fabric8.docker.provider.DockerContainerProvider">
+    <OCD id="io.fabric8.container.provider.docker" name="%io.fabric8.container.provider.docker.name" description="%io.fabric8.container.provider.docker.description">
+        <AD id="fabric.container.protocol" type="String" default="docker" name="%io.fabric8.container.provider.docker.fabric.container.protocol.name" description="%io.fabric8.container.provider.docker.fabric.container.protocol.description"/>
+        <AD id="jolokiaKeepAlivePollTime" type="Long" default="10000" name="%io.fabric8.container.provider.docker.jolokiaKeepAlivePollTime.name" description="%io.fabric8.container.provider.docker.jolokiaKeepAlivePollTime.description"/>
+    </OCD>
+    <Designate pid="io.fabric8.container.provider.docker">
+        <Object ocdref="io.fabric8.container.provider.docker"/>
+    </Designate>
+</metatype:MetaData>

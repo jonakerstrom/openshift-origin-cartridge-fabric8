@@ -44,12 +44,6 @@ if "%JAVA_MIN_MEM%" == "" (
 if "%JAVA_MAX_MEM%" == "" (
     set JAVA_MAX_MEM=512M
 )
-if "%JAVA_PERM_MEM%" == "" (
-    set JAVA_PERM_MEM=16M
-)
-if "%JAVA_MAX_PERM_MEM%" == "" (
-    set JAVA_MAX_PERM_MEM=128M
-)
 
 goto BEGIN
 
@@ -118,10 +112,14 @@ if not "%JAVA%" == "" goto :Check_JAVA_END
 
 if "%JAVA_OPTS%" == "" set JAVA_OPTS=%DEFAULT_JAVA_OPTS%
 
+if "%EXTRA_JAVA_OPTS%" == "" goto :KARAF_EXTRA_JAVA_OPTS_END
+    set JAVA_OPTS="%EXTRA_JAVA_OPTS% %JAVA_OPTS%"
+:KARAF_EXTRA_JAVA_OPTS_END
+
 set CLASSPATH=%KARAF_HOME%\lib\bin\karaf-client.jar
-set CLASSPATH=%CLASSPATH%;%KARAF_HOME%\system\org\apache\sshd\sshd-core\0.9.0\sshd-core-0.9.0.jar
+set CLASSPATH=%CLASSPATH%;%KARAF_HOME%\system\org\apache\sshd\sshd-core\0.11.0\sshd-core-0.11.0.jar
 set CLASSPATH=%CLASSPATH%;%KARAF_HOME%\system\org\apache\mina\mina-core\2.0.7\mina-core-2.0.7.jar
-set CLASSPATH=%CLASSPATH%;%KARAF_HOME%\system\org\apache\karaf\shell\org.apache.karaf.shell.console\2.3.0.redhat-610379\org.apache.karaf.shell.console-2.3.0.redhat-610379.jar
+set CLASSPATH=%CLASSPATH%;%KARAF_HOME%\system\org\apache\karaf\shell\org.apache.karaf.shell.console\2.4.0.redhat-620004\org.apache.karaf.shell.console-2.4.0.redhat-620004.jar
 
 :EXECUTE
     if "%SHIFT%" == "true" SET ARGS=%2 %3 %4 %5 %6 %7 %8 %9

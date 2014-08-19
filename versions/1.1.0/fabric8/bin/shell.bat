@@ -44,12 +44,6 @@ if "%JAVA_MIN_MEM%" == "" (
 if "%JAVA_MAX_MEM%" == "" (
     set JAVA_MAX_MEM=512M
 )
-if "%JAVA_PERM_MEM%" == "" (
-    set JAVA_PERM_MEM=16M
-)
-if "%JAVA_MAX_PERM_MEM%" == "" (
-    set JAVA_MAX_PERM_MEM=128M
-)
 
 goto BEGIN
 
@@ -119,16 +113,20 @@ if not "%JAVA%" == "" goto :Check_JAVA_END
 
 if "%JAVA_OPTS%" == "" set JAVA_OPTS=%DEFAULT_JAVA_OPTS%
 
+if "%EXTRA_JAVA_OPTS%" == "" goto :KARAF_EXTRA_JAVA_OPTS_END
+    set JAVA_OPTS="%EXTRA_JAVA_OPTS% %JAVA_OPTS%"
+:KARAF_EXTRA_JAVA_OPTS_END
+
 if "%KARAF_DEBUG%" == "" goto :KARAF_DEBUG_END
     rem Use the defaults if JAVA_DEBUG_OPTS was not set
     if "%JAVA_DEBUG_OPTS%" == "" set JAVA_DEBUG_OPTS=%DEFAULT_JAVA_DEBUG_OPTS%
     
-    set "JAVA_OPTS=%JAVA_DEBUG_OPTS% %JAVA_OPTS%"
+    set JAVA_OPTS="%JAVA_DEBUG_OPTS% %JAVA_OPTS%"
     call :warn Enabling Java debug options: %JAVA_DEBUG_OPTS%
 :KARAF_DEBUG_END
 
-set CLASSPATH=%KARAF_HOME%\system\org\apache\karaf\shell\org.apache.karaf.shell.console\2.3.0.redhat-610379\org.apache.karaf.shell.console-2.3.0.redhat-610379.jar
-set CLASSPATH=%CLASSPATH%;%KARAF_HOME%\system\org\ops4j\pax\logging\pax-logging-api\1.7.2\pax-logging-api-1.7.2.jar
+set CLASSPATH=%KARAF_HOME%\system\org\apache\karaf\shell\org.apache.karaf.shell.console\2.4.0.redhat-620004\org.apache.karaf.shell.console-2.4.0.redhat-620004.jar
+set CLASSPATH=%CLASSPATH%;%KARAF_HOME%\system\org\ops4j\pax\logging\pax-logging-api\1.7.3\pax-logging-api-1.7.3.jar
 
 :EXECUTE
     if "%SHIFT%" == "true" SET ARGS=%2 %3 %4 %5 %6 %7 %8

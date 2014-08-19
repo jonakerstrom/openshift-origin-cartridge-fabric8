@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.0.0" localization="OSGI-INF/metatype/io.fabric8.docker.provider.DockerApiRegistry">
+    <OCD id="io.fabric8.docker.api.registry.mbean" name="%io.fabric8.docker.api.registry.mbean.name" description="%io.fabric8.docker.api.registry.mbean.description"/>
+    <Designate pid="io.fabric8.docker.api.registry.mbean">
+        <Object ocdref="io.fabric8.docker.api.registry.mbean"/>
+    </Designate>
+</metatype:MetaData>

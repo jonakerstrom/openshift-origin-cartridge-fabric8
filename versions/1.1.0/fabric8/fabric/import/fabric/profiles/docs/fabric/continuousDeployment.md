@@ -73,15 +73,15 @@ The main way to use a profile zip right now is to install them in a fabric via t
 
 e.g. to upload a single profile as a zip
 
-    profile-import mvn:io.fabric8.quickstarts.fabric/camel-cdi/1.1.0.CR3/zip/profile
+    profile-import mvn:io.fabric8.quickstarts.fabric/camel-cdi/1.1.0.CR5/zip/profile
 
 or to upload all of the quickstarts:
 
-    profile-import mvn:io.fabric8.quickstarts.fabric/fabric8-quickstarts-parent/1.1.0.CR3/zip/profile
+    profile-import mvn:io.fabric8.quickstarts.fabric/fabric8-quickstarts-parent/1.1.0.CR5/zip/profile
 
 You can specify a specific version to use:
 
-    profile-import -v 1.1 mvn:io.fabric8.quickstarts.fabric/camel-cdi/1.1.0.CR3/zip/profile
+    profile-import -v 1.1 mvn:io.fabric8.quickstarts.fabric/camel-cdi/1.1.0.CR5/zip/profile
 
 Or if you want to import to a new version, you would need to create the new version first using `create-version`
 
@@ -89,7 +89,7 @@ Or if you want to import to a new version, you would need to create the new vers
 
 and then import to new version with
 
-    profile-import -v 1.2 mvn:io.fabric8.quickstarts.fabric/camel-cdi/1.1.0.CR3/zip/profile
+    profile-import -v 1.2 mvn:io.fabric8.quickstarts.fabric/camel-cdi/1.1.0.CR5/zip/profile
 
 Once the profiles are imported you should be able to use them from the command line; or you should be able to view them in the Wiki in the web console and create containers or migrate them etc.
 
@@ -152,3 +152,9 @@ The following section of a pom.xml will create a new branch, unzip the dependent
 Different teams and companies have different policies for moving software through the Continuous Deployment pipeline; so try find the approach that suits your team, its workflow and the tools and processes you are using.
 
 We'd love to [hear from you](http://fabric8.io/community/index.html) how you get on using fabric8 in your continuous deployment pipeline. If you have any suggestions for how we can improve fabric8 to better support your continuous deployment pipeline please [raise an issue](https://github.com/fabric8io/fabric8/issues) we love feedback!
+
+### Automating the creation of a fabric
+
+Many customers want an easy, repeatable way to spin up a fabric and all the various containers they need in an automated way. This is particularly useful as part of a _Continuous Deployment_ build process for performing integration, load & soak testing.
+
+To do this fabric8 has an [Auto Scaler](http://fabric8.io/gitbook/requirements.html) which allows you to define how many instances of each profile you need and the auto scaler will automatically create the containers you need; using the available resources and automatically create new containers if there is a hardware or software failure.

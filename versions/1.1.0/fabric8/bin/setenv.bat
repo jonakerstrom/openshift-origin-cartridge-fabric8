@@ -33,26 +33,38 @@ rem karaf script afterwards.
 rem
 
 rem
-rem The following section shows the possible configuration options for the default 
+rem The following section shows the possible configuration options for the default
 rem karaf scripts
 rem
 rem Window name of the windows console
 rem SET KARAF_TITLE
+
 rem Minimum memory for the JVM
-rem SET JAVA_MIN_MEM
+rem SET JAVA_MIN_MEM=512M
+
 rem Maximum memory for the JVM
-rem SET JAVA_MAX_MEM
+rem SET JAVA_MAX_MEM=512M
+
 rem Minimum perm memory for the JVM
-rem SET JAVA_PERM_MEM
+rem SET JAVA_PERM_MEM=128M
+
 rem Maximum memory for the JVM
-rem SET JAVA_MAX_PERM_MEM
+rem SET JAVA_MAX_PERM_MEM=128M
+
+rem Additional JVM options
+rem SET EXTRA_JAVA_OPTS
+
 rem Karaf home folder
 rem SET KARAF_HOME
+
 rem Karaf data folder
 rem SET KARAF_DATA
+
 rem Karaf base folder
 rem SET KARAF_BASE
+
 rem Karaf etc folder
 rem SET KARAF_ETC
+
 rem Additional available Karaf options
 rem SET KARAF_OPTS

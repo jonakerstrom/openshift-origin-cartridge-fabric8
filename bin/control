@@ -61,6 +61,13 @@ function replace_envs() {
 		sed -i -e "s/\${env.OPENSHIFT_FABRIC8_IP}/$OPENSHIFT_FABRIC8_IP/g" \
 			$f
 	done
+
+	echo "Replcaing jetty binding"
+
+
+	cd ${OPENSHIFT_FABRIC8_DIR}/template/.openshift/config
+	sed -ig 's/OPENSHIFT_FABRIC8_IP/'$OPENSHIFT_FABRIC8_IP'/g' conf/jetty.xml
+
 }
 
 function start() {

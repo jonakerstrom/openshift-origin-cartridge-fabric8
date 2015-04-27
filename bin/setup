@@ -22,6 +22,6 @@ fi
 # Create the settings.xml file if it does not exist
 #
 if [ ! -f "$M2_HOME/settings.xml" ] ; then
-    echo -e  "<settings>\n   <localRepository>$OPENSHIFT_DATA_DIR/.m2/repository</localRepository>\n</settings>\n" > $
+    echo -e  "<settings>\n   <localRepository>$OPENSHIFT_DATA_DIR/.m2/repository</localRepository>\n</settings>\n" > $M2_HOME/settings.xml
 fi
 

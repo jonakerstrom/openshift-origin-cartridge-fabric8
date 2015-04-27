@@ -25,4 +25,4 @@ if [ ! -f "$M2_HOME/settings.xml" ] ; then
     echo -e  "<settings>\n   <localRepository>$OPENSHIFT_DATA_DIR/.m2/repository</localRepository>\n</settings>\n" > $M2_HOME/settings.xml
 fi
 
-ln -s "$HOME/.m2" "$M2_HOME"
+ln -s $HOME/.m2 $M2_HOME
